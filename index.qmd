@@ -1,0 +1,62 @@
+---
+title: "Computational Epidemiology"
+subtitle: "Master in Bioinformatics and Computational Biology · {{< var semester >}} · University of Bern"
+toc: false
+---
+
+**Instructor:** {{< var instructor >}}, Interfaculty Bioinformatics Unit
+
+## What this course is
+
+You will build your own model of an infectious disease (or of the pathogen that causes it), use it to answer a question you chose yourself, and present the answer.
+
+The course has a fixed rhythm: **short lecture → short pitch → long work block**. Lectures give you tools. Pitches make you commit to a plan before you start coding. Work blocks are where the project gets done, with the instructor walking around.
+
+## Four model families from Day 1
+
+Last year almost every project was an SIR variant, because SIR was all we had covered when teams picked their topics. This year you see four families of models before you pitch.
+
+| Family | The question it answers | Tutorial |
+|---|---|---|
+| **Compartment models** (SIR and friends) | How does an epidemic unfold in a population? | [T1](tutorials/01-sir.qmd) |
+| **Branching processes** | Does a single infection — or a single resistant cell — take off or die out? | [T2](tutorials/02-chance.qmd) |
+| **Pathogen evolution** (between and within hosts) | Which strain wins? When does treatment select for resistance? | [T3](tutorials/03-strain-invasion.qmd), [T4](tutorials/04-within-host.qmd) |
+| **Space, individuals and data** | What changes when contacts are local? What does the data tell us about $R_t$? | [T5](tutorials/05-spatial.qmd), [T6](tutorials/06-rt-estimation.qmd) |
+
+One idea runs through all of them. **The probability that a rare lineage escapes extinction is roughly twice its excess growth rate, divided by the variance in offspring number.** That covers a new epidemic, a new strain and a resistance mutation alike. You will meet this result on Day 1 and use it all week.
+
+## Learning outcomes
+
+By the end of the course you can
+
+1. write down a compartment model, find its equilibria and compute $R_0$;
+2. explain why deterministic and stochastic models of the same process can disagree, and when that matters;
+3. model the emergence of drug resistance and of new pathogen strains;
+4. estimate a time-varying reproduction number from incidence data and judge how much to trust it;
+5. turn a vague biological question into a model, a reference case and a testable prediction;
+6. present a modelling result clearly in 10 minutes.
+
+## How you are graded
+
+- **Final presentation** (Day 4, in teams).
+- **Written report** with reproducible code, due **{{< var report_due >}}**.
+
+The details are on the [project page](projects/index.qmd). AI tools are allowed; read the [AI policy](ai-policy.qmd).
+
+## Software
+
+All tutorials use R. Install these before Day 1:
+
+```r
+install.packages(c("deSolve", "ggplot2", "dplyr", "tidyr", "EpiEstim"))
+```
+
+You may use any language for your project, as long as I can run your code.
+
+## Reading
+
+- Otto & Day, *A Biologist's Guide to Mathematical Modeling in Ecology and Evolution* (Princeton, 2007).
+- Keeling & Rohani, *Modeling Infectious Diseases in Humans and Animals* (Princeton, 2008).
+- Earn (2008), *A light introduction to modelling recurrent epidemics* (on ILIAS).
+- Orr & Unckless (2014), *The population genetics of evolutionary rescue*, PLoS Genetics.
+- Cori et al. (2013), *A new framework and software to estimate time-varying reproduction numbers during epidemics*, Am J Epidemiol.

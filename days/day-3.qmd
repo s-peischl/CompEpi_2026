@@ -1,0 +1,42 @@
+---
+title: "Day 3 — Space, individuals and data"
+subtitle: "{{< var day3 >}} · 09:00–12:00"
+---
+
+## Learning outcomes
+
+- Build an individual-based model on a grid and explain how it differs from mass action.
+- Explain why local contacts turn exponential growth into a travelling wave.
+- Estimate $R_t$ from incidence data with EpiEstim, and say which assumptions drive the answer.
+
+## 09:00 · Lecture 4 {.block-lecture}
+
+**Space and individuals**
+
+- From compartments to individuals: Gillespie simulation, and cellular automata on a grid.
+- Local transmission: infections can only happen at the edge of the epidemic. Cumulative cases grow like $t^2$ (in 2D), not $e^{rt}$.
+- Spatial structure within hosts: tumours, biofilms, drug gradients and evolutionary rescue in structured populations (Tomasini & Peischl).
+
+**Models meet data**
+
+- The renewal equation: incidence today = $R_t \times$ (past incidence weighted by the serial interval).
+- Bayesian estimation of $R_t$ (Cori et al. 2013) and its assumptions: serial interval, window length, reporting.
+- Other data sources: deaths and hospitalisations, sequences (phylodynamics, birth–death skyline).
+
+Slides: [Lecture 4](../slides/L4-space-data.qmd) (press `F` for full screen, `S` for speaker notes)
+
+Tutorials: [T5 — Spatial epidemics](../tutorials/05-spatial.qmd), [T6 — Estimating $R_t$](../tutorials/06-rt-estimation.qmd)
+
+## 10:00 · Pitch 3 — First result {.block-pitch}
+
+::: {.callout-important title="Pitch 3 · 2 minutes · exactly one figure"}
+1. **One figure** and what it shows.
+2. **Did it match your prediction from Pitch 2?** If not, why not?
+3. **What is still missing** for Day 4, and where are you stuck?
+:::
+
+## 10:30 · Work block 3 {.block-work}
+
+- Finish the main analysis. Scan the one parameter that matters most.
+- Check robustness: does the result survive a different seed, more replicates or a different parameter value?
+- Start the slides: question → model → result → what it means.

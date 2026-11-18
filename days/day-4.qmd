@@ -1,0 +1,23 @@
+---
+title: "Day 4 — Final presentations"
+subtitle: "{{< var day4 >}} · 09:00–12:00"
+---
+
+## 09:00 · Work block 4 {.block-work}
+
+Finish the slides and rehearse once with a timer.
+
+## 10:30 · Final presentations
+
+10 minutes per team plus 5 minutes of questions. Suggested structure:
+
+1. **The question** (1 slide): why should anyone care?
+2. **The model** (1–2 slides): diagram and key assumptions. Say what you left out on purpose.
+3. **The reference case** (1 slide).
+4. **The result** (2–3 slides): one message per figure.
+5. **What it means** (1 slide): biology or public health, and the limits of the model.
+6. **AI usage** (one line on the last slide).
+
+Every team member presents a part. Everyone must be able to answer questions about the code.
+
+See the [project page](../projects/index.qmd) for how presentations and reports are assessed.

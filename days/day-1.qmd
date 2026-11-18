@@ -1,0 +1,66 @@
+---
+title: "Day 1 — Two ways to model an outbreak"
+subtitle: "{{< var day1 >}} · 09:00–12:00 and 13:00–15:00"
+---
+
+## Learning outcomes
+
+- Write down an SIR model and explain every term.
+- Compute $R_0$ and the herd immunity threshold, and find equilibria.
+- Explain why an outbreak with $R_0 > 1$ can still die out.
+- Compute the probability that a resistance mutation rescues a population under treatment.
+- See that the last two are the **same calculation**.
+
+## 09:00 · How this course works
+
+Projects in teams of 3–5. Three pitches before the final talk. Grading, [AI policy](../ai-policy.qmd).
+
+## 09:15 · Lecture 1 — Compartment models {.block-lecture}
+
+- What epidemiological models are for: understanding vs. prediction; "all models are wrong".
+- SIR as ordinary differential equations: mass action, rates, mean infectious period $1/\gamma$.
+- Solving ODEs numerically; equilibria; the phase plane ($S$–$I$).
+- $R_0 = \beta/\gamma$. Infections rise as long as $S > 1/R_0$, which gives the herd immunity threshold $1 - 1/R_0$.
+- SIR with births and deaths: endemic equilibrium, damped oscillations.
+- Brief tour of extensions: SEIR, vector-borne, cholera (environmental reservoir).
+
+Slides: [Course intro + Lecture 1](../slides/L1-compartment-models.qmd) (press `F` for full screen, `S` for speaker notes)
+
+Tutorial: [T1 — SIR basics](../tutorials/01-sir.qmd)
+
+## 10:30 · Lecture 2 — When chance decides {.block-lecture}
+
+The first infected person in a new population and the first resistant bacterium in a treated patient are in the same situation. Both are a single lineage that grows on average but can easily be lost by chance.
+
+- Branching processes: each individual leaves a random number of "offspring" (infections, daughter cells).
+- Haldane (1927): the extinction probability $\eta$ solves $\eta = G(\eta)$, where $G$ is the offspring generating function.
+- **Epidemic takeoff:** in SIR, $P(\text{takeoff}) = 1 - 1/R_0$.
+- **Evolution of resistance (evolutionary rescue):** a population under treatment declines at rate $r$, and resistant mutants arise at rate $u$ and grow at rate $s$.
+  - Establishment probability of one mutant $\approx 2s$.
+  - Rescue probability $\approx 1 - \exp(-2Nus/r)$ (Orr & Unckless 2014).
+- **The unifying rule:** $P(\text{establish}) \approx 2 \times (\text{mean} - 1) / \text{variance}$ of the offspring number.
+
+Slides: [Lecture 2](../slides/L2-chance.qmd) (press `F` for full screen, `S` for speaker notes)
+
+Tutorial: [T2 — Chance: takeoff and rescue](../tutorials/02-chance.qmd)
+
+## 11:30 · Project menu and teams
+
+Look at the [project menu](../projects/index.qmd#menu). Form teams of 3–5. Over lunch, agree on *one* question.
+
+## 13:00 · Pitch 1 — The question {.block-pitch}
+
+::: {.callout-important title="Pitch 1 · 2 minutes · no slides needed"}
+1. **Our question in one sentence.** It should end with a question mark.
+2. **Which model family** we will start from (compartment, branching/resistance, strain evolution, within-host, spatial, data).
+3. **The one figure we want to show on Day 4.** What is on the x-axis, and what is on the y-axis?
+:::
+
+Feedback from the instructor and the other teams: is the question small enough?
+
+## 13:30 · Work block 1 {.block-work}
+
+1. Run [T1](../tutorials/01-sir.qmd) and [T2](../tutorials/02-chance.qmd). Everyone in the team should be able to run both.
+2. Copy the tutorial code closest to your project into your own script.
+3. Make the *simplest* version of your model run. No extensions yet.
+4. Write down the reference case: the model *without* your new ingredient, which you will compare against.

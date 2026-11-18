@@ -1,0 +1,50 @@
+---
+title: "Schedule"
+---
+
+Every day follows the same pattern. A **lecture** (about 1 hour), then a round of **pitches** where every team shows its plan in 2–3 minutes, then a **work block** on the project.
+
+::: {.callout-note}
+Colours: [lecture]{.block-lecture} · [pitch]{.block-pitch} · [work]{.block-work}
+:::
+
+## [{{< var day1 >}}](days/day-1.qmd) — full day
+
+| Time | Block | |
+|---|---|---|
+| 09:00–09:15 | How this course works | projects, pitches, grading, AI policy |
+| 09:15–10:15 | [**Lecture 1** — Compartment models]{.block-lecture} | SIR, $R_0$, herd immunity, equilibria, phase plane |
+| 10:15–10:30 | Break | |
+| 10:30–11:30 | [**Lecture 2** — When chance decides]{.block-lecture} | branching processes: epidemic takeoff *and* evolution of resistance |
+| 11:30–12:00 | Project menu, form teams (3–5) | |
+| 12:00–13:00 | Lunch | talk about ideas |
+| 13:00–13:30 | [**Pitch 1 — The question**]{.block-pitch} | 2 min per team |
+| 13:30–15:00 | [**Work block 1**]{.block-work} | T1 and T2 as warm-up, then your project |
+
+## [{{< var day2 >}}](days/day-2.qmd) — morning
+
+| Time | Block | |
+|---|---|---|
+| 09:00–10:00 | [**Lecture 3** — Pathogen evolution, between and within hosts]{.block-lecture} | strain invasion, virulence, within-host dynamics, drug resistance in a patient |
+| 10:00–10:25 | [**Pitch 2 — The model**]{.block-pitch} | 3 min per team |
+| 10:25–10:40 | Break | |
+| 10:40–12:00 | [**Work block 2**]{.block-work} | T3 / T4 as needed |
+
+## [{{< var day3 >}}](days/day-3.qmd) — morning
+
+| Time | Block | |
+|---|---|---|
+| 09:00–10:00 | [**Lecture 4** — Space, individuals and data]{.block-lecture} | spatial and individual-based models; estimating $R_t$ |
+| 10:00–10:20 | [**Pitch 3 — First result**]{.block-pitch} | 2 min per team, one figure |
+| 10:20–10:30 | Break | |
+| 10:30–12:00 | [**Work block 3**]{.block-work} | T5 / T6 as needed |
+
+## [{{< var day4 >}}](days/day-4.qmd) — morning
+
+| Time | Block | |
+|---|---|---|
+| 09:00–10:15 | [**Work block 4**]{.block-work} | finish analysis, build slides |
+| 10:15–10:30 | Break | |
+| 10:30–12:00 | **Final presentations** | 10 min + 5 min questions per team |
+
+Written report due: **{{< var report_due >}}**.

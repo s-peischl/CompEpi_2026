@@ -1,0 +1,104 @@
+---
+title: "T5 — Spatial epidemics on a grid"
+subtitle: "Day 3 · individuals and space"
+---
+
+```{r}
+#| label: setup
+library(ggplot2)
+theme_set(theme_classic(base_size = 14))
+set.seed(3)
+```
+
+**The question.** In SIR, every infected person can infect every susceptible person (mass action). What happens when people can only infect their neighbours?
+
+## A cellular automaton
+
+Each cell of an $L \times L$ grid is one individual: susceptible (0), infected (1) or recovered (2). In every time step:
+
+- a susceptible cell with $k$ infected neighbours (up, down, left, right) becomes infected with probability $1 - (1 - p)^k$;
+- an infected cell recovers with probability $q$.
+
+This is an *individual-based* model: no compartment proportions and no ODEs, just rules for each individual. Counting neighbours with shifted copies of the grid is fast, even in R.
+
+```{r}
+#| label: ca
+shift <- function(m, dr, dc) {                 # shift a matrix, filling with 0
+  L <- nrow(m); out <- matrix(0, L, L)
+  rs <- max(1, 1 + dr):min(L, L + dr); cs <- max(1, 1 + dc):min(L, L + dc)
+  out[rs, cs] <- m[rs - dr, cs - dc]
+  out
+}
+
+ca_sir <- function(L = 101, p = 0.3, q = 0.2, steps = 150, mixed = FALSE) {
+  grid <- matrix(0L, L, L)
+  grid[ceiling(L / 2), ceiling(L / 2)] <- 1L   # one infected cell in the middle
+  snaps <- list(); cum <- numeric(steps)
+  for (t in 1:steps) {
+    inf <- (grid == 1) * 1
+    k <- if (mixed) {
+      4 * mean(inf)                            # well-mixed: 4 contacts drawn from everyone
+    } else {
+      shift(inf, 1, 0) + shift(inf, -1, 0) + shift(inf, 0, 1) + shift(inf, 0, -1)
+    }
+    new_inf <- grid == 0 & runif(L^2) < 1 - (1 - p)^k
+    recover <- grid == 1 & runif(L^2) < q
+    grid[new_inf] <- 1L
+    grid[recover] <- 2L
+    cum[t] <- sum(grid > 0)
+    if (t %in% c(20, 50, 80)) snaps[[as.character(t)]] <- grid
+  }
+  list(snaps = snaps, cum = cum)
+}
+
+local_run <- ca_sir()
+```
+
+```{r}
+#| label: fig-snapshots
+#| fig-cap: "The epidemic spreads as a ring: infected cells (orange) form a travelling front, with recovered cells (blue) behind it."
+#| fig-height: 3.5
+snap_df <- do.call(rbind, lapply(names(local_run$snaps), function(t) {
+  g <- local_run$snaps[[t]]
+  data.frame(x = rep(1:ncol(g), each = nrow(g)), y = rep(1:nrow(g), ncol(g)),
+             state = factor(c(g), levels = 0:2, labels = c("S", "I", "R")),
+             time = paste("t =", t))
+}))
+snap_df$time <- factor(snap_df$time, levels = paste("t =", names(local_run$snaps)))
+ggplot(snap_df, aes(x, y, fill = state)) +
+  geom_raster() + facet_wrap(~time) + coord_equal() +
+  scale_fill_manual(values = c(S = "grey92", I = "#E69F00", R = "#56B4E9")) +
+  theme_void(base_size = 14) + labs(fill = NULL)
+```
+
+## Waves grow slowly
+
+With mass action, cases grow exponentially at first. On a grid, new infections can only happen at the *front* of the epidemic. The front moves at a roughly constant speed, so the infected area grows like $t^2$.
+
+To compare like with like, we run the same model with the 4 contacts drawn from the whole population instead of the neighbours (`mixed = TRUE`). This has the same $p$, the same $q$ and the same number of contacts.
+
+```{r}
+#| label: fig-growth
+#| fig-cap: "Cumulative infections: well-mixed contacts (grey) grow exponentially; local contacts (orange) grow like t². Log scale."
+mixed_run <- ca_sir(mixed = TRUE)
+growth <- rbind(data.frame(time = 1:150, cum = local_run$cum, contacts = "local (grid)"),
+                data.frame(time = 1:150, cum = mixed_run$cum, contacts = "well mixed"))
+ggplot(growth, aes(time, cum, colour = contacts)) +
+  geom_line(linewidth = 1.2) +
+  scale_y_log10() +
+  scale_colour_manual(values = c(`local (grid)` = "#E69F00", `well mixed` = "grey40")) +
+  labs(x = "Time step", y = "Cumulative infections (log)", colour = NULL)
+```
+
+(The well-mixed run can die out by chance in its first steps. If it does, change the seed, and remember [T2](02-chance.qmd).)
+
+## Exercises
+
+1. Lower $p$ step by step. Below some value the infection no longer spreads across the grid, even though each infected cell still infects more than one neighbour on average in a fully susceptible neighbourhood. Why? (Keyword: *percolation*.)
+2. Fit $\log(\text{cum})$ against $\log(t)$ for the local run. Is the slope close to 2?
+3. Vaccinate a random 30% of cells before the start (set them to 2). Compare with the well-mixed version at the same coverage.
+
+## Project hooks
+
+- Long-range jumps (small-world networks); ring vs. random vaccination; a tumour growing on a grid with drug-resistant cells. See the [project menu](../projects/index.qmd#menu), family E.
+- To make an animation like last year's, save frames with `ggsave()` and combine them with the `gifski` package.

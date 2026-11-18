@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Computational Epidemiology 2026"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: schedule.qmd
+        text: Schedule
+      - text: Days
+        menu:
+          - days/day-1.qmd
+          - days/day-2.qmd
+          - days/day-3.qmd
+          - days/day-4.qmd
+      - text: Tutorials
+        menu:
+          - tutorials/01-sir.qmd
+          - tutorials/02-chance.qmd
+          - tutorials/03-strain-invasion.qmd
+          - tutorials/04-within-host.qmd
+          - tutorials/05-spatial.qmd
+          - tutorials/06-rt-estimation.qmd
+      - href: projects/index.qmd
+        text: Projects
+      - href: ai-policy.qmd
+        text: AI policy
+
+format:
+  html:
+    theme: flatly
+    toc: true
+    code-tools: true
+    code-copy: true
+    highlight-style: tango
+    css: styles.css
+
+execute:
+  freeze: auto
+  warning: false
+  message: false

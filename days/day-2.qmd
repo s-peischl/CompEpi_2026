@@ -1,0 +1,46 @@
+---
+title: "Day 2 — Pathogen evolution, between and within hosts"
+subtitle: "{{< var day2 >}} · 09:00–12:00"
+---
+
+## Learning outcomes
+
+- Derive when a mutant strain can invade a resident strain.
+- Explain why evolution need not maximise transmission (the virulence trade-off).
+- Write down a within-host model of virus, target cells and drug.
+- Explain the *mutant selection window*: why intermediate drug doses can be worst.
+
+## 09:00 · Lecture 3 {.block-lecture}
+
+**Between hosts: which strain wins?**
+
+- Two strains with complete cross-immunity, in a population with births and deaths.
+- A rare mutant grows when $\beta_m S^* > \gamma_m + \mu$. At the resident equilibrium $S^* = 1/R_0^{\text{res}}$, so **the strain with the larger $R_0$ wins**, even if it transmits less per contact.
+- Virulence trade-off: if $\beta(\alpha) \propto \sqrt{\alpha}$, then $R_0$ is maximised at $\alpha^* = \gamma + \mu$, an intermediate virulence.
+- A mutant strain arising *during* one epidemic must appear early, while $S$ is still high (branching process again).
+
+**Within a host: virus, cells and drugs**
+
+- Target-cell model (Perelson 2002): $T \to I \to V$, with a within-host $R_0 = \beta \lambda p / (d\,\delta\,c)$.
+- The drug blocks infection with efficacy $\varepsilon$. The wild type is suppressed if $\varepsilon > 1 - 1/R_0$.
+- A resistant mutant pays a fitness cost but tolerates the drug better. Three simple dose thresholds follow: where resistance becomes favoured ($D_x$), where the wild type alone is stopped ($D_W$), and where everything is stopped ($D_M$). Between $D_W$ and $D_M$ lies the classical **mutant selection window**.
+- Link to Day 1: whether resistance actually appears is a rescue problem. Deterministic models get this wrong.
+
+Slides: [Lecture 3](../slides/L3-pathogen-evolution.qmd) (press `F` for full screen, `S` for speaker notes)
+
+Tutorials: [T3 — Strain invasion](../tutorials/03-strain-invasion.qmd), [T4 — Within-host dynamics](../tutorials/04-within-host.qmd)
+
+## 10:00 · Pitch 2 — The model {.block-pitch}
+
+::: {.callout-important title="Pitch 2 · 3 minutes · 1–2 slides"}
+1. **Model diagram:** boxes and arrows (compartments) or a list of events with their rates.
+2. **Parameters:** values and where they come from (a paper, a range you will scan, or a toy value, said explicitly).
+3. **Reference case:** what you compare against.
+4. **Prediction:** what you expect to see *before* running it. Writing it down is the point.
+:::
+
+## 10:40 · Work block 2 {.block-work}
+
+- Implement your model. Check it reproduces the reference case when the new ingredient is switched off.
+- Do one sanity check against a formula from the lectures, e.g. $R_0$, $1 - 1/R_0$ or $2s$.
+- Make a first version of your Day 4 figure, even if it is ugly.

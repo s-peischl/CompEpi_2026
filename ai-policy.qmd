@@ -1,0 +1,78 @@
+---
+title: "AI use policy"
+---
+
+## 1. Purpose
+
+AI tools (ChatGPT, Copilot, Claude, Gemini, code assistants, …) can greatly support learning and productivity. In this course you may use AI to help with coding, drafting text, exploring model ideas, clarifying concepts and summarising literature. This policy says how to do that while keeping your work scientifically sound, reproducible and genuinely understood.
+
+## 2. General principles
+
+1. **AI is permitted but is not a substitute for understanding.** You may use AI for any part of the project, but you must be able to explain, justify and verify every step.
+2. **You are fully responsible for everything you submit**, including its correctness, citations, working code and interpretation.
+3. Misuse of AI that leads to false claims, fabricated citations or unexplained code is academic misconduct.
+
+## 3. Transparency
+
+Every presentation and report includes a short **AI usage statement** (2–6 sentences): which tools you used, for which tasks, and how you checked the output.
+
+> *Example:* "We used ChatGPT to draft initial pseudocode for an SIR model and to outline a parameter estimation workflow. All code was rewritten and tested by us. We also asked Claude to summarise two papers, but we verified all citations manually."
+
+## 4. Verification
+
+AI systems often produce plausible but wrong or invented content, so you must check everything they produce.
+
+**Code**
+
+- Annotate all code in your own words.
+- You must be able to explain every line, during presentations or when asked.
+- AI-generated code that you cannot explain counts as misconduct.
+- Test, debug and validate all code as a team.
+
+**Literature and citations**
+
+- A hallucinated (nonexistent) paper, or a wildly wrong citation, means **an automatic fail for the whole project**.
+- Check every reference yourself: the paper exists, the authors, year and journal are correct, and your summary matches what the paper says.
+- Download or view every paper you cite.
+
+**Models and derivations**
+
+- You may use AI to draft or simplify equations.
+- Derive or re-derive every model yourself. If you get stuck, ask me.
+- Check that the equations make biological sense.
+
+## 5. Acceptable uses (examples)
+
+- Drafting or revising written explanations
+- Asking for clarification of epidemiological concepts
+- Suggesting model structures, which you then validate
+- Generating pseudocode or code snippets, which you then rewrite or verify
+- Summarising large code files
+- Brainstorming project ideas or data sources
+
+## 6. Unacceptable uses (examples)
+
+- Inventing or fabricating references
+- Submitting AI-generated code without understanding or testing it
+- Accepting AI-generated parameter values or model structures without checking them
+- Having AI write results or analysis sections for work you did not do
+- Letting AI summarise a paper without checking the paper yourself
+
+## 7. Consequences
+
+- Fabricated citations: automatic fail for the project.
+- Unexplained or unverified code: significant grade penalty, or a fail.
+- AI-generated text submitted without verification: grade penalty.
+- Repeated or severe violations: referral to the university's academic integrity office.
+
+These rules are strict because this is new for all of us. If you are open about how you used AI, there will be no problem.
+
+## 8. Using AI well
+
+- Ask for *explanations*, not just answers. Have a Socratic dialogue with it.
+- Treat AI output as a suggestion, not as fact.
+- Test everything: simulations, parameter estimates, code and derivations.
+- Cross-check biological and epidemiological claims.
+- Check every reference yourself.
+
+If in doubt, ask me.

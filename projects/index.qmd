@@ -1,0 +1,87 @@
+---
+title: "Projects"
+---
+
+## The idea
+
+In teams of 3–5 you build a model, use it to answer **one** question, and present the answer. A small question answered well beats a big question answered vaguely.
+
+Every good project has four things:
+
+1. **A question**, one sentence ending in a question mark. "We study vaccination" is a topic. "Does vaccinating children or the elderly first reduce deaths more?" is a question.
+2. **A reference case:** the same model without your new ingredient. "Heterogeneity speeds up spread" means nothing without saying *compared to what*.
+3. **A prediction made before you run anything.** It is fine to be wrong, and often that is the most interesting outcome.
+4. **One main figure** that answers the question.
+
+## Timeline
+
+| When | What | Format |
+|---|---|---|
+| Day 1, 13:00 | **Pitch 1 — The question** | 2 min, no slides needed |
+| Day 2, 10:00 | **Pitch 2 — The model** | 3 min, 1–2 slides |
+| Day 3, 10:00 | **Pitch 3 — First result** | 2 min, exactly one figure |
+| Day 4, 10:30 | **Final presentation** | 10 min + 5 min questions |
+| {{< var report_due >}} | **Written report + code** | see below |
+
+The prompts for each pitch are on the day pages: [Day 1](../days/day-1.qmd), [Day 2](../days/day-2.qmd), [Day 3](../days/day-3.qmd).
+
+## Project menu {#menu}
+
+These are starting points. You can combine them, change them or propose your own; the pitches are where you agree it with me. Each tutorial ends with more ideas under **Project hooks**.
+
+### A · Compartment models (start from [T1](../tutorials/01-sir.qmd))
+
+- **Treatment.** Add a treated compartment: treated individuals recover faster and may be less infectious. How effective must a drug be to change the epidemic peak?
+- **Heterogeneity.** Two groups that differ in susceptibility or in recovery rate. Does heterogeneity speed up or slow down spread, compared with a homogeneous population with the same average?
+- **Seasonality.** Let $\beta$ oscillate over the year. When does seasonality produce multi-year cycles?
+- **Vaccination strategy.** Vaccinate newborns at coverage $p$. Check the threshold $p_c = 1 - 1/R_0$, then make it harder with waning immunity.
+
+### B · Branching processes and resistance (start from [T2](../tutorials/02-chance.qmd))
+
+- **Dosing schedules.** Make the stress $r$ time-dependent: increasing, decreasing or cycling. Does a slow ramp-up of the antibiotic help resistance evolve?
+- **Competition.** Let the resistant mutant's advantage depend on population density, e.g. strong only when sensitive cells are few. Does killing more sensitive cells *help* resistance?
+- **Standing vs. new mutations.** Start with a few resistant cells already present. Which matters more: pre-existing resistance or new mutations?
+- **Superspreading.** Replace Poisson offspring with an overdispersed (negative binomial) distribution. How does the takeoff probability change at the same $R_0$?
+
+### C · Strain evolution between hosts (start from [T3](../tutorials/03-strain-invasion.qmd))
+
+- **Virulence evolution.** Put a ladder of strains with different virulence on the trade-off curve. Does evolution find $\alpha^* = \gamma + \mu$?
+- **Partial cross-immunity.** Infection with strain 1 only partly protects against strain 2. When can two strains coexist?
+- **Emergence during an epidemic.** How early must a more transmissible variant appear to take over? Check the approximation with Gillespie simulations.
+
+### D · Within-host dynamics (start from [T4](../tutorials/04-within-host.qmd))
+
+- **Adherence.** Patients miss doses. Model drug concentration as a function of time (pharmacokinetics). How much non-adherence pushes the patient into the selection window?
+- **Combination therapy.** Two drugs, where resistance to both needs two mutations. How much does combination therapy reduce the rescue probability?
+- **Stochastic resistance.** Replace the deterministic mutant with a branching process. When does resistance actually appear?
+
+### E · Space and individuals (start from [T5](../tutorials/05-spatial.qmd))
+
+- **Long-range jumps.** Add a small probability of infecting a random cell anywhere. How many jumps turn a wave into exponential growth?
+- **Spatial vaccination.** Random vaccination vs. ring vaccination around cases, at the same number of doses.
+- **Tumour on a grid.** Cells divide into empty neighbouring sites, and a drug kills sensitive cells. Do resistant cells at the edge or in the core drive relapse?
+
+### F · Models meet data (start from [T6](../tutorials/06-rt-estimation.qmd))
+
+- **Pick a dataset** shipped with EpiEstim (e.g. `SARS2003`, `Measles1861`, `Smallpox1972`, `Flu1918`, `mers_2014_15`), estimate $R_t$ and test how sensitive the answer is to the serial interval.
+- **Know the truth.** Simulate an epidemic with a lockdown (a drop in $\beta$ on day 30). Does EpiEstim detect the drop, and how late?
+- **Under-reporting.** Only a fraction of cases is observed, and that fraction changes over time. What does that do to $R_t$?
+
+## Written report
+
+- **Length:** at most 4 A4 pages, excluding references, code and the AI statement.
+- **Structure:** Question · Model · Results · Discussion · References · AI usage statement.
+- **Code:** commented, and runnable by me to reproduce every figure in the report, e.g. one R script or a Quarto file. Any language is fine.
+- **Parameters:** every value has a source (a reference), or is explicitly a toy value you scan.
+- **References:** real papers you have looked at yourself. See the [AI policy](../ai-policy.qmd).
+
+## How projects are assessed
+
+| Criterion | What I look for |
+|---|---|
+| Question | Clear, focused, answerable with the model |
+| Model | Appropriate, with assumptions stated and justified, and a reference case |
+| Analysis | Correct, sanity-checked, robust (replicates, parameter scan) |
+| Interpretation | Links back to biology or public health, and names the limits of the model |
+| Communication | Clear figures, one message per figure, on time |
+| Reproducibility | Code runs and reproduces the figures |
