@@ -1,0 +1,13 @@
+/* Keep pictures from overflowing a 1280x720 slide */
+.reveal .slides section img {
+  max-height: 430px;
+  object-fit: contain;
+}
+/* Slides marked {.tall}: one big picture with at most a one-line caption */
+.reveal .slides section.tall img {
+  max-height: 560px;
+}
+/* Pictures inside columns share the slide with text: cap them a bit lower */
+.reveal .slides section .columns img {
+  max-height: 400px;
+}

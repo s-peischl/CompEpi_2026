@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.39">
+
+  <meta name="author" content="Stephan Peischl · Interfaculty Bioinformatics Unit · University of Bern">
+  <title>Computational Epidemiology 2026 – Computational Epidemiology</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-423d414d36ce366a9d05f36d06304417.css">
+  <link rel="stylesheet" href="slides.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Computational Epidemiology</h1>
+  <p class="subtitle">Master in Bioinformatics and Computational Biology · HS 2026 · Lecture 1: Compartment models</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Stephan Peischl · Interfaculty Bioinformatics Unit · University of Bern 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="how-this-course-works" class="title-slide slide level1 center" data-background-color="#2C3E50">
+<h1>How this course works</h1>
+
+</section>
+<section id="four-wednesdays" class="slide level2 smaller">
+<h2>Four Wednesdays</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Lecture</th>
+<th>Pitch</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>25 Nov (9–12, 13–15)</td>
+<td>L1 Compartment models, L2 Chance</td>
+<td>1: the question</td>
+</tr>
+<tr class="even">
+<td>2 Dec (9–12)</td>
+<td>L3 Pathogen evolution</td>
+<td>2: the model</td>
+</tr>
+<tr class="odd">
+<td>9 Dec (9–12)</td>
+<td>L4 Space and data</td>
+<td>3: first result</td>
+</tr>
+<tr class="even">
+<td>16 Dec (9–12)</td>
+<td>—</td>
+<td>Final presentations</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>Every day: <strong>lecture (1 h) → pitches (2–3 min per team) → work on your project.</strong></p>
+</div>
+</section>
+<section id="four-model-families-before-you-choose" class="slide level2 smaller">
+<h2>Four model families, before you choose</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Question</th>
+<th>Tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Compartment models</td>
+<td>How does an epidemic unfold?</td>
+<td>T1</td>
+</tr>
+<tr class="even">
+<td>Branching processes</td>
+<td>Does one infection, or one resistant cell, take off?</td>
+<td>T2</td>
+</tr>
+<tr class="odd">
+<td>Pathogen evolution</td>
+<td>Which strain wins? When does treatment select for resistance?</td>
+<td>T3, T4</td>
+</tr>
+<tr class="even">
+<td>Space and data</td>
+<td>What changes with local contacts? What is <span class="math inline">\(R_t\)</span> right now?</td>
+<td>T5, T6</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>You will have seen the first two by lunch today. Pitch 1 is at 13:00.</p>
+</div>
+</section>
+<section id="your-project" class="slide level2">
+<h2>Your project</h2>
+<p>Teams of 3–5. One <strong>question</strong>, answered with a model you build yourselves.</p>
+<p>A good project has</p>
+<ol type="1">
+<li><strong>a question</strong> in one sentence, ending with a question mark;</li>
+<li><strong>a reference case</strong>: the model <em>without</em> your new ingredient;</li>
+<li><strong>a prediction</strong>, written down before you run anything;</li>
+<li><strong>one main figure</strong> that answers the question.</li>
+</ol>
+<div class="fragment">
+<p>Graded on the <strong>final presentation</strong> and a <strong>written report</strong> with code that reproduces every figure.</p>
+</div>
+</section>
+<section id="ai-tools-allowed-with-three-rules" class="slide level2 smaller">
+<h2>AI tools: allowed, with three rules</h2>
+<ol type="1">
+<li><strong>Be transparent.</strong> Every presentation and report ends with a 2–6 sentence AI usage statement: which tools, for what, and how you checked the output.</li>
+<li><strong>Understand everything.</strong> You must be able to explain every line of code and every equation. Code you cannot explain counts as misconduct.</li>
+<li><strong>Check every reference yourself.</strong> A hallucinated paper is an automatic fail for the project.</li>
+</ol>
+<div class="fragment">
+<p>Good uses: explanations, debugging, pseudocode, brainstorming. Ask for <em>explanations</em>, not just answers.</p>
+<p>Full policy on the course website.</p>
+</div>
+</section></section>
+<section>
+<section id="lecture-1-compartment-models" class="title-slide slide level1 center" data-background-color="#2C3E50">
+<h1>Lecture 1 · Compartment models</h1>
+
+</section>
+<section id="what-computational-epidemiology-is-for" class="slide level2">
+<h2>What computational epidemiology is for</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Before an epidemic</strong></p>
+<ul>
+<li>Which interventions work?</li>
+<li>Can an outbreak be contained?</li>
+<li>How many vaccines should be stockpiled?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>During an epidemic</strong></p>
+<ul>
+<li>Estimate transmission parameters</li>
+<li>Interpret real-time trends</li>
+<li>Assess the impact of interventions</li>
+<li>Track new variants</li>
+</ul>
+</div></div>
+<div class="fragment">
+<p>Models are used for <strong>understanding</strong> (why does this happen?) and for <strong>prediction</strong> (what will happen?). This course is mostly about understanding.</p>
+</div>
+</section>
+<section id="all-models-are-wrong-but-some-are-useful" class="slide level2">
+<h2>All models are wrong, but some are useful</h2>
+<p>Every model trades off <strong>simplicity</strong>, <strong>accuracy</strong> and <strong>generality</strong>.</p>
+<ul>
+<li><strong>Toy models:</strong> simple and often solvable by hand. They build intuition for one new feature.</li>
+<li><strong>Realistic simulations:</strong> many details, used for “experiments” we cannot do. Hard to understand why they behave as they do.</li>
+<li><strong>Simple general models:</strong> capture the key features. They give simple results that explain a specific problem.</li>
+</ul>
+<div class="fragment">
+<p>In your project, aim for the third kind. <strong>Start simple, then add one ingredient.</strong></p>
+</div>
+</section>
+<section id="a-very-short-history" class="slide level2">
+<h2>A very short history</h2>
+<ul>
+<li><strong>1760, Daniel Bernoulli:</strong> a mathematical model of smallpox, used to show that inoculation increases life expectancy.</li>
+<li><strong>1911, Ronald Ross:</strong> a model of malaria transmission. Reducing mosquitoes below a threshold eliminates the disease.</li>
+<li><strong>1927, Kermack &amp; McKendrick:</strong> the SIR model. An epidemic stops <em>before</em> everyone is infected.</li>
+</ul>
+<div class="fragment">
+<p>The core ideas we use today, thresholds and <span class="math inline">\(R_0\)</span>, come from these three.</p>
+</div>
+</section>
+<section id="beginnings-of-formal-epidemic-modelling" class="slide level2 smaller">
+<h2>Beginnings of formal epidemic modelling</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/history_timeline.png" class="quarto-figure quarto-figure-center" height="430"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Jenner/Bernoulli (smallpox), Snow (cholera, the first epidemiological map), Ross and Macdonald (malaria), Kermack and McKendrick, Anderson and May. Each step connects a disease to a modelling idea.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="compartments" class="slide level2">
+<h2>Compartments</h2>
+<p>Divide the population by <strong>disease status</strong>:</p>
+<table class="caption-top">
+<tbody>
+<tr class="odd">
+<td><strong>S</strong></td>
+<td>susceptible</td>
+<td>can be infected</td>
+</tr>
+<tr class="even">
+<td><strong>I</strong></td>
+<td>infected</td>
+<td>infectious, can infect others</td>
+</tr>
+<tr class="odd">
+<td><strong>R</strong></td>
+<td>recovered (removed)</td>
+<td>immune, or dead</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>We follow the <strong>proportions</strong> <span class="math inline">\(S(t)\)</span>, <span class="math inline">\(I(t)\)</span> and <span class="math inline">\(R(t)\)</span>, with <span class="math inline">\(S + I + R = 1\)</span>, and ignore what happens inside each host. Lecture 3 opens that box.</p>
+</div>
+</section>
+<section id="building-the-sir-model" class="slide level2">
+<h2>Building the SIR model</h2>
+<p>How fast does <span class="math inline">\(I\)</span> change?</p>
+<div class="fragment">
+<p><strong>Up:</strong> susceptibles meet infecteds at a rate proportional to <span class="math inline">\(S \cdot I\)</span> (mass action), and a fraction of meetings transmits. Together: <span class="math inline">\(\beta S I\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Down:</strong> each infected person recovers at rate <span class="math inline">\(\gamma\)</span>, so the mean infectious period is <span class="math inline">\(1/\gamma\)</span>. Together: <span class="math inline">\(\gamma I\)</span>.</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[
+\frac{dS}{dt} = -\beta S I, \qquad
+\frac{dI}{dt} = \beta S I - \gamma I, \qquad
+\frac{dR}{dt} = \gamma I
+\]</span></p>
+</div>
+</section>
+<section id="where-beta-s-i-comes-from" class="slide level2 smaller">
+<h2>Where <span class="math inline">\(\beta S I\)</span> comes from</h2>
+<p>Follow <strong>one infected person</strong> for a short time <span class="math inline">\(\Delta t\)</span>:</p>
+<div class="fragment">
+<ul>
+<li>They make <span class="math inline">\(c\,\Delta t\)</span> contacts (contact rate <span class="math inline">\(c\)</span>).</li>
+<li>A fraction <span class="math inline">\(S\)</span> of those contacts are susceptible.</li>
+<li>Each contact with a susceptible transmits with probability <span class="math inline">\(p\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>New infections caused by this person: <span class="math inline">\(c\,p\,S\,\Delta t\)</span>. With <span class="math inline">\(I\)</span> infected people:</p>
+<p><span class="math display">\[
+\text{new infections in } \Delta t = \underbrace{c\,p}_{\beta}\; S\, I\, \Delta t
+\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Mass action</strong> assumes contacts are random: anyone can meet anyone. Lecture 4 drops this.</p>
+</div>
+</section>
+<section id="where-gamma-i-comes-from" class="slide level2 smaller">
+<h2>Where <span class="math inline">\(\gamma I\)</span> comes from</h2>
+<p>Each infected person recovers with probability <span class="math inline">\(\gamma\,\Delta t\)</span> in a short interval <span class="math inline">\(\Delta t\)</span>, independently of how long they have been infected.</p>
+<div class="fragment">
+<p>For a group of <span class="math inline">\(I_0\)</span> people infected at time 0, nobody new joining:</p>
+<p><span class="math display">\[
+\frac{dI}{dt} = -\gamma I \;\Rightarrow\; I(t) = I_0\, e^{-\gamma t}
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li>The fraction still infectious after time <span class="math inline">\(t\)</span> is <span class="math inline">\(e^{-\gamma t}\)</span>: the infectious period is <strong>exponentially distributed</strong>.</li>
+<li>Its mean is <span class="math inline">\(\int_0^\infty e^{-\gamma t}\,dt = 1/\gamma\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>This is a modelling choice. Real infectious periods are less variable. SEIR models and models with several I stages fix this (later today).</p>
+</div>
+</section>
+<section id="from-time-steps-to-differential-equations" class="slide level2 smaller">
+<h2>From time steps to differential equations</h2>
+<p>Over a short step <span class="math inline">\(\Delta t\)</span>:</p>
+<p><span class="math display">\[
+I(t + \Delta t) = I(t) + \beta S I\, \Delta t - \gamma I\, \Delta t
+\]</span></p>
+<div class="fragment">
+<p>Rearrange and let <span class="math inline">\(\Delta t \to 0\)</span>:</p>
+<p><span class="math display">\[
+\frac{I(t + \Delta t) - I(t)}{\Delta t} = \beta S I - \gamma I
+\;\xrightarrow{\;\Delta t \to 0\;}\;
+\frac{dI}{dt} = \beta S I - \gamma I
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Every flow out of one compartment is a flow into another, so <span class="math inline">\(S + I + R = 1\)</span> always:</p>
+<p><span class="math display">\[
+\frac{d}{dt}(S + I + R) = -\beta SI + (\beta SI - \gamma I) + \gamma I = 0
+\]</span></p>
+</div>
+</section>
+<section id="what-is-a-solution" class="slide level2">
+<h2>What is a solution?</h2>
+<p>A <strong>solution</strong> is a set of functions <span class="math inline">\(S(t)\)</span>, <span class="math inline">\(I(t)\)</span>, <span class="math inline">\(R(t)\)</span> that satisfy the equations for all <span class="math inline">\(t\)</span>.</p>
+<div class="fragment">
+<p><strong>One case we can solve by hand:</strong> at the very start, <span class="math inline">\(S \approx 1\)</span>:</p>
+<p><span class="math display">\[
+\frac{dI}{dt} \approx (\beta - \gamma)\, I
+\quad\Rightarrow\quad
+I(t) = I_0\, e^{(\beta - \gamma) t}
+\]</span></p>
+<p>The epidemic grows exponentially if <span class="math inline">\(\beta &gt; \gamma\)</span>.</p>
+</div>
+<div class="fragment">
+<p>For the full SIR model there is no simple closed form. We <strong>solve it numerically</strong>, in a few lines of R (T1).</p>
+</div>
+</section>
+<section id="how-a-computer-solves-it-eulers-method" class="slide level2 smaller">
+<h2>How a computer solves it: Euler’s method</h2>
+<p>Read the time-step equation backwards: from today’s state, compute tomorrow’s.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="cf">for</span> (step <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_steps) {</span>
+<span id="cb1-2"><a></a>  dS <span class="ot">&lt;-</span> <span class="sc">-</span>beta <span class="sc">*</span> S <span class="sc">*</span> I</span>
+<span id="cb1-3"><a></a>  dI <span class="ot">&lt;-</span>  beta <span class="sc">*</span> S <span class="sc">*</span> I <span class="sc">-</span> gamma <span class="sc">*</span> I</span>
+<span id="cb1-4"><a></a>  S  <span class="ot">&lt;-</span> S <span class="sc">+</span> dS <span class="sc">*</span> dt</span>
+<span id="cb1-5"><a></a>  I  <span class="ot">&lt;-</span> I <span class="sc">+</span> dI <span class="sc">*</span> dt</span>
+<span id="cb1-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="L1-compartment-models_files/figure-revealjs/euler-1.png" width="1056"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Smaller steps converge to the true solution. <code>deSolve</code> picks the step size for you.</p>
+</div>
+</section>
+<section id="one-epidemic" class="slide level2">
+<h2>One epidemic</h2>
+
+<img data-src="L1-compartment-models_files/figure-revealjs/sir-1.png" width="1056" class="r-stretch"><p>Infections peak exactly when <span class="math inline">\(S\)</span> drops to <span class="math inline">\(1/R_0\)</span>.</p>
+</section>
+<section id="try-it-yourself-5-min" class="slide level2">
+<h2>Try it yourself (5 min)</h2>
+<p>Open the interactive SIR tutorial: <strong><a href="https://speischl.shinyapps.io/sir_tutorial/">speischl.shinyapps.io/sir_tutorial</a></strong></p>
+<p>In pairs:</p>
+<ol type="1">
+<li>What happens if you multiply <span class="math inline">\(\gamma\)</span> <em>or</em> <span class="math inline">\(\beta\)</span> by 2?</li>
+<li>What happens if you multiply <span class="math inline">\(\gamma\)</span> <em>and</em> <span class="math inline">\(\beta\)</span> by 2? Can you explain it?</li>
+<li>What are the equilibria of the system, the states where nothing changes?</li>
+<li>Are they stable? What would “stable” mean here?</li>
+<li>What would you change in the model to make the disease persist?</li>
+</ol>
+</section>
+<section id="quick-check" class="slide level2">
+<h2>Quick check</h2>
+<p>What happens if we <strong>double both <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span></strong>?</p>
+<div class="fragment">
+<p>The epidemic has the <strong>same shape</strong> and the <strong>same final size</strong>, but runs <strong>twice as fast</strong>.</p>
+<p>Only the ratio <span class="math inline">\(\beta/\gamma\)</span> decides <em>whether</em> and <em>how big</em>. The values themselves only set the time scale.</p>
+</div>
+</section>
+<section id="the-basic-reproduction-number-r_0" class="slide level2">
+<h2>The basic reproduction number <span class="math inline">\(R_0\)</span></h2>
+<blockquote>
+<p>The expected number of secondary cases caused by one infected individual in a fully susceptible population.</p>
+</blockquote>
+<div class="fragment">
+<p>One infected person infects at rate <span class="math inline">\(\beta S\)</span> for an average time <span class="math inline">\(1/\gamma\)</span>. With <span class="math inline">\(S = 1\)</span>:</p>
+<p><span class="math display">\[
+R_0 = \frac{\beta}{\gamma}
+\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math inline">\(\dfrac{dI}{dt} &gt; 0 \iff \beta S &gt; \gamma \iff S &gt; \dfrac{1}{R_0}\)</span></p>
+<p>The epidemic can only grow while enough people are still susceptible.</p>
+</div>
+</section>
+<section id="r_0-by-counting-one-generation" class="slide level2 smaller">
+<h2><span class="math inline">\(R_0\)</span> by counting one generation</h2>
+<p>Take one step of the length of an infectious period, <span class="math inline">\(\Delta t = 1/\gamma\)</span>:</p>
+<div class="fragment">
+<p><span class="math display">\[
+I(t + 1/\gamma) \approx I + \beta S I \cdot \frac{1}{\gamma} - \gamma I \cdot \frac{1}{\gamma}
+= \frac{\beta S}{\gamma}\, I
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li>The old infecteds are gone (they recovered).</li>
+<li>Each was replaced by <span class="math inline">\(\beta S/\gamma\)</span> new ones.</li>
+</ul>
+<p>So each infected person is replaced by <span class="math inline">\(\beta S / \gamma\)</span> others, which is <span class="math inline">\(R_0 = \beta/\gamma\)</span> when <span class="math inline">\(S = 1\)</span>, and the <strong>effective</strong> reproduction number <span class="math inline">\(R_t = R_0\, S(t)\)</span> later on.</p>
+</div>
+</section>
+<section id="how-many-get-infected-in-the-end" class="slide level2 smaller">
+<h2>How many get infected in the end?</h2>
+<p>Divide <span class="math inline">\(dS/dt\)</span> by <span class="math inline">\(dR/dt\)</span>, and time drops out:</p>
+<p><span class="math display">\[
+\frac{dS}{dR} = \frac{-\beta S I}{\gamma I} = -R_0\, S
+\quad\Rightarrow\quad
+S = S_0\, e^{-R_0 R}
+\]</span></p>
+<div class="fragment">
+<p>At the end, <span class="math inline">\(I = 0\)</span>, so the final size is <span class="math inline">\(Z = R_\infty = 1 - S_\infty\)</span>. With <span class="math inline">\(S_0 \approx 1\)</span>:</p>
+<p><span class="math display">\[
+\boxed{1 - Z = e^{-R_0 Z}}
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li>This has no closed form, but is easy to solve numerically (<code>uniroot</code> in R).</li>
+<li>There is always a solution with <span class="math inline">\(Z &gt; 0\)</span> when <span class="math inline">\(R_0 &gt; 1\)</span>. <strong>Not everyone gets infected:</strong> <span class="math inline">\(S_\infty &gt; 0\)</span>.</li>
+</ul>
+</div>
+</section>
+<section id="how-high-is-the-peak" class="slide level2 smaller">
+<h2>How high is the peak?</h2>
+<p>Divide <span class="math inline">\(dI/dt\)</span> by <span class="math inline">\(dS/dt\)</span>:</p>
+<p><span class="math display">\[
+\frac{dI}{dS} = \frac{\beta S I - \gamma I}{-\beta S I} = -1 + \frac{1}{R_0\, S}
+\]</span></p>
+<div class="fragment">
+<p>Integrate:</p>
+<p><span class="math display">\[
+I + S - \frac{\ln S}{R_0} = \text{const} = 1 \quad (\text{at the start: } S = 1, I = 0)
+\]</span></p>
+</div>
+<div class="fragment">
+<p>The peak is at <span class="math inline">\(S = 1/R_0\)</span>, so</p>
+<p><span class="math display">\[
+\boxed{I_{\max} = 1 - \frac{1 + \ln R_0}{R_0}}
+\qquad R_0 = 2: \; I_{\max} \approx 15\%
+\]</span></p>
+<p>This matches the simulation (0.1534 for both).</p>
+</div>
+</section>
+<section id="what-herd-immunity-means" class="slide level2 smaller">
+<h2>What herd immunity means</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><strong>The idea:</strong> immune people do not just protect themselves. They also <em>block chains of transmission</em> to others.</p>
+<p>An infected person meets others at random, and only a fraction <span class="math inline">\(S\)</span> of contacts can be infected: <span class="math inline">\(R_t = R_0\, S\)</span>.</p>
+<p>Once enough people are immune that <span class="math inline">\(R_t &lt; 1\)</span>, every chain <strong>dies out on its own</strong>, and non-immune people are protected <em>indirectly</em>:</p>
+<p><span class="math display">\[
+\text{immune fraction} &gt; \boxed{1 - \frac{1}{R_0}}
+\]</span></p>
+<p>Example: <span class="math inline">\(R_0 = 2.5\)</span> needs 60% immune.</p>
+</div><div class="column" style="width:55%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="L1-compartment-models_files/figure-revealjs/herd-protection-1.png" width="624"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Risk that a <strong>non-immune</strong> person gets infected, <span class="math inline">\(1 - z = e^{-R_0(1-p)z}\)</span>. It drops to zero at the threshold (dotted).</p>
+</div></div>
+</section>
+<section id="what-herd-immunity-does-not-mean" class="slide level2 smaller">
+<h2>What herd immunity does <em>not</em> mean</h2>
+<ul>
+<li><strong>It is a threshold for growth, not a force field.</strong> Above it, an introduced case still infects some people. Chains just shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and <span class="math inline">\(R_0 = 2.5\)</span>, an unprotected person’s risk falls from 89% to 37%.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Reaching it through infection costs more than the threshold.</strong> The epidemic overshoots (next slide): at <span class="math inline">\(R_0 = 2\)</span> the threshold is 50%, but about 80% get infected.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>It assumes random mixing.</strong> National coverage above the threshold does not protect a <em>cluster</em> of unvaccinated people who mostly meet each other. Measles outbreaks in under-vaccinated communities are the classic example.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>It is not a fixed number.</strong> It moves with <span class="math inline">\(R_0\)</span>: new variants, seasons and behaviour change it. Immunity can <strong>wane</strong>, so the immune fraction can slip back below the threshold.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Vaccines are not perfect.</strong> With efficacy <span class="math inline">\(E\)</span>, the coverage needed is <span class="math inline">\(v_c = (1 - 1/R_0)/E\)</span>. For measles (<span class="math inline">\(R_0 \approx 15\)</span>, <span class="math inline">\(E \approx 0.97\)</span>) that is about 96%. If <span class="math inline">\(v_c &gt; 1\)</span>, vaccination alone cannot do it.</li>
+</ul>
+</div>
+</section>
+<section id="herd-immunity-threshold-and-final-size" class="slide level2">
+<h2>Herd immunity threshold and final size</h2>
+
+<img data-src="L1-compartment-models_files/figure-revealjs/hit-1.png" width="1056" class="r-stretch"><p>An unmitigated epidemic <strong>overshoots</strong> the herd immunity threshold: at <span class="math inline">\(R_0 = 2\)</span>, 50% are needed but about 80% get infected.</p>
+</section>
+<section id="r_0-for-real-diseases" class="slide level2">
+<h2><span class="math inline">\(R_0\)</span> for real diseases</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Disease</th>
+<th><span class="math inline">\(R_0\)</span> (typical range)</th>
+<th>Herd immunity threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Measles</td>
+<td>12–18</td>
+<td>92–94%</td>
+</tr>
+<tr class="even">
+<td>SARS-CoV-2 (ancestral strain)</td>
+<td>about 2.5–3</td>
+<td>about 60–67%</td>
+</tr>
+<tr class="odd">
+<td>Seasonal influenza</td>
+<td>about 1.3</td>
+<td>about 23%</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><span class="math inline">\(R_0\)</span> is <strong>not</strong> a property of the pathogen alone. It depends on contact patterns, population density, season and behaviour. The same pathogen has different <span class="math inline">\(R_0\)</span> in different places.</p>
+<p><span class="math inline">\(R_t\)</span> is the reproduction number <em>now</em>, with immunity and interventions. Lecture 4 estimates it from data.</p>
+<aside class="notes">
+<p>Measles range: Anderson &amp; May 1991 (with the caveat from Guerra et al.&nbsp;2017 that published values vary widely). Influenza: Biggerstaff et al.&nbsp;2014, median about 1.28 for seasonal flu. Discussion: is “herd immunity” in public debate the same thing as the HIT here?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="r_0-and-herd-immunity-across-diseases" class="slide level2 smaller">
+<h2><span class="math inline">\(R_0\)</span> and herd immunity across diseases</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/r0_table_wikipedia.png" class="quarto-figure quarto-figure-center" height="430"></p>
+</figure>
+</div>
+<p>Source: Wikipedia, “Basic reproduction number”. Each value is a range from many studies, a reminder that <span class="math inline">\(R_0\)</span> depends on the population as much as on the pathogen.</p>
+</section>
+<section id="equilibria" class="slide level2">
+<h2>Equilibria</h2>
+<p>An <strong>equilibrium</strong> is a state where nothing changes: <span class="math inline">\(dS/dt = dI/dt = dR/dt = 0\)</span>.</p>
+<div class="fragment">
+<p>For SIR: every state with <span class="math inline">\(I = 0\)</span> is an equilibrium (any split between <span class="math inline">\(S\)</span> and <span class="math inline">\(R\)</span>).</p>
+</div>
+<div class="fragment">
+<p>Is it <strong>stable</strong>? Add a few infected individuals:</p>
+<ul>
+<li>if <span class="math inline">\(S &gt; 1/R_0\)</span>, they multiply: <strong>unstable</strong>;</li>
+<li>if <span class="math inline">\(S &lt; 1/R_0\)</span>, they die out: <strong>stable</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="the-phase-plane" class="slide level2">
+<h2>The phase plane</h2>
+
+<img data-src="L1-compartment-models_files/figure-revealjs/phase-1.png" width="1056" class="r-stretch"><p>Every trajectory peaks on the line <span class="math inline">\(S = 1/R_0\)</span> and ends on the axis <span class="math inline">\(I = 0\)</span>.</p>
+</section>
+<section id="adding-births-and-deaths" class="slide level2">
+<h2>Adding births and deaths</h2>
+<p>New susceptibles arrive at rate <span class="math inline">\(\mu\)</span>, and everyone dies at rate <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[
+\frac{dS}{dt} = \mu - \beta S I - \mu S, \qquad
+\frac{dI}{dt} = \beta S I - (\gamma + \mu) I
+\]</span></p>
+<div class="fragment">
+<p>Now <span class="math inline">\(R_0 = \beta/(\gamma + \mu)\)</span>, and there is a second equilibrium, the <strong>endemic</strong> one:</p>
+<p><span class="math display">\[
+S^* = \frac{1}{R_0}, \qquad I^* = \frac{\mu}{\beta}\,(R_0 - 1)
+\]</span></p>
+<p>It exists only if <span class="math inline">\(R_0 &gt; 1\)</span>.</p>
+</div>
+</section>
+<section id="deriving-the-endemic-equilibrium" class="slide level2 smaller">
+<h2>Deriving the endemic equilibrium</h2>
+<p>Set both equations to zero.</p>
+<div class="fragment">
+<p>From <span class="math inline">\(dI/dt = 0\)</span>, with <span class="math inline">\(I^* &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+\beta S^* = \gamma + \mu \quad\Rightarrow\quad S^* = \frac{\gamma + \mu}{\beta} = \frac{1}{R_0}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>From <span class="math inline">\(dS/dt = 0\)</span>:</p>
+<p><span class="math display">\[
+\mu - \beta S^* I^* - \mu S^* = 0
+\quad\Rightarrow\quad
+I^* = \frac{\mu\,(1 - S^*)}{\beta S^*} = \frac{\mu}{\beta}\,(R_0 - 1)
+\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(I^* &gt; 0\)</span> only if <span class="math inline">\(R_0 &gt; 1\)</span>.</li>
+<li><span class="math inline">\(I^*\)</span> is proportional to <span class="math inline">\(\mu\)</span>: the <strong>birth rate</strong> of susceptibles sets how much infection the population can sustain.</li>
+</ul>
+</div>
+</section>
+<section id="is-the-disease-free-state-stable" class="slide level2 smaller">
+<h2>Is the disease-free state stable?</h2>
+<p>Start at <span class="math inline">\(S = 1\)</span>, <span class="math inline">\(I = 0\)</span> and add a few infecteds, <span class="math inline">\(I = \varepsilon\)</span>. While <span class="math inline">\(I\)</span> is small, <span class="math inline">\(S \approx 1\)</span>:</p>
+<p><span class="math display">\[
+\frac{dI}{dt} \approx (\beta - \gamma - \mu)\, I = (\gamma + \mu)(R_0 - 1)\, I
+\]</span></p>
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(R_0 &lt; 1\)</span>: <span class="math inline">\(I\)</span> shrinks, so the disease-free state is <strong>stable</strong>.</li>
+<li><span class="math inline">\(R_0 &gt; 1\)</span>: <span class="math inline">\(I\)</span> grows, so it is <strong>unstable</strong>, and the system moves to the endemic state.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>This is <strong>linearisation</strong>: near an equilibrium, keep only the terms that are linear in the small perturbation. It works for any model, and with several infected classes it gives the next-generation matrix.</p>
+</div>
+</section>
+<section id="the-infection-becomes-endemic" class="slide level2">
+<h2>The infection becomes endemic</h2>
+
+<img data-src="L1-compartment-models_files/figure-revealjs/endemic-1.png" width="1056" class="r-stretch"></section>
+<section id="vaccination-threshold" class="slide level2 smaller">
+<h2>Vaccination threshold</h2>
+<p>Vaccinate a fraction <span class="math inline">\(v\)</span> of newborns. They go straight to <span class="math inline">\(R\)</span>, so susceptibles are only produced at rate <span class="math inline">\(\mu(1 - v)\)</span>.</p>
+<div class="fragment">
+<p>The disease-free state now has <span class="math inline">\(S = 1 - v\)</span>, and the linearisation becomes</p>
+<p><span class="math display">\[
+\frac{dI}{dt} \approx \big(\beta (1 - v) - \gamma - \mu\big)\, I
+\]</span></p>
+</div>
+<div class="fragment">
+<p>Elimination requires <span class="math inline">\(R_0 (1 - v) &lt; 1\)</span>:</p>
+<p><span class="math display">\[
+\boxed{v_c = 1 - \frac{1}{R_0}}
+\]</span></p>
+<p>This is the same number as the herd immunity threshold. For measles (<span class="math inline">\(R_0 \approx 15\)</span>) it is about 93%, which is why measles returns as soon as coverage drops a few percent.</p>
+</div>
+</section>
+<section id="beyond-sir-an-exposed-latent-class" class="slide level2 smaller">
+<h2>Beyond SIR: an exposed (latent) class</h2>
+<div class="columns">
+<div class="column" style="width:38%;">
+<p>Many infections have a <strong>latent period</strong>: infected, but not yet infectious.</p>
+<p><span class="math display">\[
+\frac{dE}{dt} = \beta S I - \sigma E
+\]</span> <span class="math display">\[
+\frac{dI}{dt} = \sigma E - \gamma I
+\]</span></p>
+<p>Same <span class="math inline">\(R_0 = \beta/\gamma\)</span>, so the same final size. But the epidemic is <strong>slower and flatter</strong>.</p>
+</div><div class="column" style="width:62%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="L1-compartment-models_files/figure-revealjs/seir-1.png" width="720"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="a-real-model-covid-19-scenarios" class="slide level2 smaller">
+<h2>A real model: COVID-19 Scenarios</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/covid_scenarios_model.png" class="quarto-figure quarto-figure-center" height="240"></p>
+</figure>
+</div>
+<p>An SEIR model used for planning in 2020 (<a href="https://covid19-scenarios.org/about">covid19-scenarios.org</a>, Neher lab, University of Basel):</p>
+<ul>
+<li><strong>Three latent stages</strong> <span class="math inline">\(E^1 \to E^2 \to E^3\)</span>: the time to become infectious is no longer exponential but peaked (gamma-distributed). This is the standard fix for the “exponential period” problem from earlier.</li>
+<li><strong>Hospital (<span class="math inline">\(H\)</span>), critical care (<span class="math inline">\(C\)</span>), ICU overflow (<span class="math inline">\(O\)</span>), death (<span class="math inline">\(D\)</span>):</strong> the model predicts what hospitals need, not just cases.</li>
+<li><strong>Transmission modulated by interventions:</strong> <span class="math inline">\(\beta\)</span> drops in steps when measures start.</li>
+</ul>
+</section>
+<section id="what-such-a-model-produces" class="slide level2 smaller">
+<h2>What such a model produces</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/covid_scenarios_results.png" class="quarto-figure quarto-figure-center" height="380"></p>
+</figure>
+</div>
+<p>Top: the transmission factor, stepped by interventions. Bottom: model curves (lines) fitted to weekly cases and deaths (dots). The efficacy of each intervention is an <em>input</em> chosen by the user, so every step in <span class="math inline">\(R\)</span> is an assumption you can vary.</p>
+</section>
+<section id="vector-borne-disease-west-nile-virus" class="slide level2 smaller">
+<h2>Vector-borne disease: West Nile virus</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/westnile_cycle.png" class="quarto-figure quarto-figure-center" height="420"></p>
+</figure>
+</div>
+<p>Birds are the reservoir and mosquitoes (<em>Culex</em>) the vector. Humans and horses are dead-end hosts: they get sick but do not transmit. © Christian Müller / Biogents.</p>
+</section>
+<section id="the-birdmosquito-model" class="slide level2 smaller">
+<h2>The bird–mosquito model</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/vector_model_diagram.png" height="290"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/vector_model_eqs.png" height="270"></p>
+</div></div>
+<ul>
+<li>Only mosquitoes have demography (<span class="math inline">\(b_M\)</span>, <span class="math inline">\(d_M\)</span>): they live weeks, birds years.</li>
+<li><strong>Frequency-dependent</strong> transmission, <span class="math inline">\(\beta S_B I_M / (S_B + I_B)\)</span>: each mosquito bites at a fixed rate.</li>
+<li>Bird → mosquito → bird, so <span class="math inline">\(R_0 = \sqrt{R_{BM}\,R_{MB}}\)</span> (next-generation definition).</li>
+</ul>
+<p>Model from Wonham &amp; Lewis (2008).</p>
+<aside class="notes">
+<p>Ross’s insight still holds: reduce mosquitoes enough and R0 &lt; 1. Infected mosquitoes stay infectious for life, so there is no recovery term for I_M.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cholera-transmission-through-water" class="slide level2 smaller">
+<h2>Cholera: transmission through water</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="img/cholera_diagram.png" height="250"></p>
+</div><div class="column" style="width:55%;">
+<p><img data-src="img/cholera_eqs.png" height="220"></p>
+</div></div>
+<ul>
+<li><span class="math inline">\(B\)</span> is the concentration of <em>Vibrio cholerae</em> in the water. Infected people shed bacteria (<span class="math inline">\(\xi I\)</span>), and the bacteria decay (<span class="math inline">\(\delta B\)</span>).</li>
+<li>Two routes of infection: from the water (<span class="math inline">\(b_B S B\)</span>) and person-to-person (<span class="math inline">\(b_I S I\)</span>).</li>
+<li>The reservoir <strong>stores</strong> infection: the disease can come back after cases have disappeared. A saturating version, <span class="math inline">\(a\,B/(K+B)\)</span>, is used by Codeço (2001).</li>
+</ul>
+<div class="fragment">
+<p>Same recipe every time: <strong>define compartments → write the flows → find <span class="math inline">\(R_0\)</span> and the equilibria.</strong></p>
+</div>
+</section>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<ul>
+<li>How useful is <span class="math inline">\(R_0\)</span> as a single number?</li>
+<li>What can go wrong when we compare <span class="math inline">\(R_0\)</span> across diseases or countries?</li>
+<li>Is “herd immunity” in public debate the same as the threshold <span class="math inline">\(1 - 1/R_0\)</span>?</li>
+</ul>
+</section>
+<section id="summary" class="slide level2 smaller">
+<h2>Summary</h2>
+<ol type="1">
+<li>Compartment models track proportions: <span class="math inline">\(S\)</span>, <span class="math inline">\(I\)</span>, <span class="math inline">\(R\)</span>, and more.</li>
+<li><span class="math inline">\(R_0 = \beta/\gamma\)</span> decides whether an epidemic can start; <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> separately only set the time scale.</li>
+<li>Infections peak at <span class="math inline">\(S = 1/R_0\)</span>; the epidemic overshoots the herd immunity threshold.</li>
+<li>With births, the infection can persist at an endemic equilibrium.</li>
+<li>Extensions follow one recipe: compartments → flows → <span class="math inline">\(R_0\)</span> and equilibria.</li>
+</ol>
+<p><strong>Tutorial:</strong> T1. <strong>Next:</strong> Lecture 2. What if one infected person is <em>not</em> an average?</p>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<ul>
+<li>Anderson RM, May RM (1991). <em>Infectious Diseases of Humans: Dynamics and Control</em>. Oxford University Press.</li>
+<li>Bernoulli D (1766). Essai d’une nouvelle analyse de la mortalité causée par la petite vérole. <em>Mém Math Phys Acad Roy Sci Paris</em> (read 1760).</li>
+<li>Biggerstaff M, Cauchemez S, Reed C, Gambhir M, Finelli L (2014). Estimates of the reproduction number for seasonal, pandemic, and zoonotic influenza: a systematic review of the literature. <em>BMC Infect Dis</em> 14:480.</li>
+<li>Codeço CT (2001). Endemic and epidemic dynamics of cholera: the role of the aquatic reservoir. <em>BMC Infect Dis</em> 1:1.</li>
+<li>Guerra FM et al.&nbsp;(2017). The basic reproduction number (R0) of measles: a systematic review. <em>Lancet Infect Dis</em> 17:e420–e428.</li>
+<li>Keeling MJ, Rohani P (2008). <em>Modeling Infectious Diseases in Humans and Animals</em>. Princeton University Press.</li>
+<li>Kermack WO, McKendrick AG (1927). A contribution to the mathematical theory of epidemics. <em>Proc R Soc Lond A</em> 115:700–721.</li>
+<li>Otto SP, Day T (2007). <em>A Biologist’s Guide to Mathematical Modeling in Ecology and Evolution</em>. Princeton University Press.</li>
+<li>Wonham MJ, Lewis MA (2008). A comparative analysis of models for West Nile virus. In: Brauer F, van den Driessche P, Wu J (eds), <em>Mathematical Epidemiology</em>, Lecture Notes in Mathematics 1945, Springer, 365–390.</li>
+<li>Ross R (1911). <em>The Prevention of Malaria</em>. 2nd edition. John Murray, London.</li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/s-peischl\.github\.io\/CompEpi_2026\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
