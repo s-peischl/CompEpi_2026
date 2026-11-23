@@ -532,7 +532,7 @@ I(t) = I_0\, e^{(\beta - \gamma) t}
 </div>
 </div>
 </div>
-<p>Smaller steps converge to the true solution. <code>deSolve</code> picks the step size for you.</p>
+<p>Smaller steps converge to the true solution. <code>deSolve</code> picks the step size for you. Full walkthrough: <a href="../tutorials/00-solving-odes.html">T0</a>.</p>
 </div>
 </section>
 <section id="one-epidemic" class="slide level2">
@@ -542,8 +542,8 @@ I(t) = I_0\, e^{(\beta - \gamma) t}
 </section>
 <section id="try-it-yourself-5-min" class="slide level2">
 <h2>Try it yourself (5 min)</h2>
-<p>Open the interactive SIR tutorial: <strong><a href="https://speischl.shinyapps.io/sir_tutorial/">speischl.shinyapps.io/sir_tutorial</a></strong></p>
-<p>In pairs:</p>
+<p>Open <strong><a href="../tutorials/00-solving-odes.html">T0 — Solving differential equations in R</a></strong>, section 5, and use <code>run_sir()</code> and <code>plot_sir()</code>.</p>
+<p>In pairs, predict first, then run:</p>
 <ol type="1">
 <li>What happens if you multiply <span class="math inline">\(\gamma\)</span> <em>or</em> <span class="math inline">\(\beta\)</span> by 2?</li>
 <li>What happens if you multiply <span class="math inline">\(\gamma\)</span> <em>and</em> <span class="math inline">\(\beta\)</span> by 2? Can you explain it?</li>
@@ -560,7 +560,7 @@ I(t) = I_0\, e^{(\beta - \gamma) t}
 <p>Only the ratio <span class="math inline">\(\beta/\gamma\)</span> decides <em>whether</em> and <em>how big</em>. The values themselves only set the time scale.</p>
 </div>
 </section>
-<section id="the-basic-reproduction-number-r_0" class="slide level2">
+<section id="the-basic-reproduction-number-r_0" class="slide level2 smaller">
 <h2>The basic reproduction number <span class="math inline">\(R_0\)</span></h2>
 <blockquote>
 <p>The expected number of secondary cases caused by one infected individual in a fully susceptible population.</p>
@@ -690,7 +690,7 @@ I + S - \frac{\ln S}{R_0} = \text{const} = 1 \quad (\text{at the start: } S = 1,
 
 <img data-src="L1-compartment-models_files/figure-revealjs/hit-1.png" width="1056" class="r-stretch"><p>An unmitigated epidemic <strong>overshoots</strong> the herd immunity threshold: at <span class="math inline">\(R_0 = 2\)</span>, 50% are needed but about 80% get infected.</p>
 </section>
-<section id="r_0-for-real-diseases" class="slide level2">
+<section id="r_0-for-real-diseases" class="slide level2 smaller">
 <h2><span class="math inline">\(R_0\)</span> for real diseases</h2>
 <table class="caption-top">
 <thead>
