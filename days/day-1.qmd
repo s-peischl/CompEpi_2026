@@ -26,7 +26,7 @@ Projects in teams of 3–5. Three pitches before the final talk. Grading, [AI po
 
 Slides: [Course intro + Lecture 1](../slides/L1-compartment-models.qmd) (press `F` for full screen, `S` for speaker notes)
 
-Tutorial: [T1 — SIR basics](../tutorials/01-sir.qmd)
+Tutorials: [T0 — Solving differential equations](../tutorials/00-solving-odes.qmd) (used in the break during the lecture), [T1 — SIR basics](../tutorials/01-sir.qmd)
 
 ## 10:30 · Lecture 2 — When chance decides {.block-lecture}
 
@@ -60,7 +60,7 @@ Feedback from the instructor and the other teams: is the question small enough?
 
 ## 13:30 · Work block 1 {.block-work}
 
-1. Run [T1](../tutorials/01-sir.qmd) and [T2](../tutorials/02-chance.qmd). Everyone in the team should be able to run both.
+1. Run [T0](../tutorials/00-solving-odes.qmd), [T1](../tutorials/01-sir.qmd) and [T2](../tutorials/02-chance.qmd). Everyone in the team should be able to run them.
 2. Copy the tutorial code closest to your project into your own script.
 3. Make the *simplest* version of your model run. No extensions yet.
 4. Write down the reference case: the model *without* your new ingredient, which you will compare against.

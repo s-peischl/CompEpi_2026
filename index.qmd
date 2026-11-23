@@ -18,7 +18,7 @@ Last year almost every project was an SIR variant, because SIR was all we had co
 
 | Family | The question it answers | Tutorial |
 |---|---|---|
-| **Compartment models** (SIR and friends) | How does an epidemic unfold in a population? | [T1](tutorials/01-sir.qmd) |
+| **Compartment models** (SIR and friends) | How does an epidemic unfold in a population? | [T0](tutorials/00-solving-odes.qmd), [T1](tutorials/01-sir.qmd) |
 | **Branching processes** | Does a single infection — or a single resistant cell — take off or die out? | [T2](tutorials/02-chance.qmd) |
 | **Pathogen evolution** (between and within hosts) | Which strain wins? When does treatment select for resistance? | [T3](tutorials/03-strain-invasion.qmd), [T4](tutorials/04-within-host.qmd) |
 | **Space, individuals and data** | What changes when contacts are local? What does the data tell us about $R_t$? | [T5](tutorials/05-spatial.qmd), [T6](tutorials/06-rt-estimation.qmd) |

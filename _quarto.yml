@@ -18,6 +18,7 @@ website:
           - days/day-4.qmd
       - text: Tutorials
         menu:
+          - tutorials/00-solving-odes.qmd
           - tutorials/01-sir.qmd
           - tutorials/02-chance.qmd
           - tutorials/03-strain-invasion.qmd

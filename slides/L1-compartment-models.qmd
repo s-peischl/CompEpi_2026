@@ -302,7 +302,7 @@ ggplot() +
   labs(x = "Time", y = "I", colour = NULL)
 ```
 
-Smaller steps converge to the true solution. `deSolve` picks the step size for you.
+Smaller steps converge to the true solution. `deSolve` picks the step size for you. Full walkthrough: [T0](../tutorials/00-solving-odes.qmd).
 
 ## One epidemic
 
@@ -327,9 +327,9 @@ Infections peak exactly when $S$ drops to $1/R_0$.
 
 ## Try it yourself (5 min)
 
-Open the interactive SIR tutorial: **[speischl.shinyapps.io/sir_tutorial](https://speischl.shinyapps.io/sir_tutorial/)**
+Open **[T0 — Solving differential equations in R](../tutorials/00-solving-odes.qmd)**, section 5, and use `run_sir()` and `plot_sir()`.
 
-In pairs:
+In pairs, predict first, then run:
 
 1. What happens if you multiply $\gamma$ *or* $\beta$ by 2?
 2. What happens if you multiply $\gamma$ *and* $\beta$ by 2? Can you explain it?
@@ -347,7 +347,7 @@ The epidemic has the **same shape** and the **same final size**, but runs **twic
 
 Only the ratio $\beta/\gamma$ decides *whether* and *how big*. The values themselves only set the time scale.
 
-## The basic reproduction number $R_0$
+## The basic reproduction number $R_0$ {.smaller}
 
 > The expected number of secondary cases caused by one infected individual in a fully susceptible population.
 
@@ -516,7 +516,7 @@ ggplot(df, aes(R0, y, colour = what)) +
 
 An unmitigated epidemic **overshoots** the herd immunity threshold: at $R_0 = 2$, 50% are needed but about 80% get infected.
 
-## $R_0$ for real diseases
+## $R_0$ for real diseases {.smaller}
 
 | Disease | $R_0$ (typical range) | Herd immunity threshold |
 |---|---|---|
