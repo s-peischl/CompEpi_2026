@@ -7,6 +7,8 @@ format:
     css: slides.css
     theme: simple
     slide-number: true
+    footer: "[⌂ Course home](../index.html) · [PDF of these slides](../pdf/L1-compartment-models.pdf)"
+    pdf-separate-fragments: false
     transition: none
     width: 1280
     height: 720
@@ -433,55 +435,23 @@ $$
 
 This matches the simulation (0.1534 for both).
 
-## What herd immunity means {.smaller}
+## What herd immunity means
 
-:::: {.columns}
-::: {.column width="45%"}
 **The idea:** immune people do not just protect themselves. They also *block chains of transmission* to others.
 
 An infected person meets others at random, and only a fraction $S$ of contacts can be infected: $R_t = R_0\, S$.
 
-Once enough people are immune that $R_t < 1$, chains still start but **die out after a few infections**. A *large* epidemic is no longer possible, and non-immune people are protected *indirectly*:
+Once enough people are immune that $R_t < 1$, chains still start but **die out after a few infections**. A large epidemic is no longer possible, and non-immune people are protected *indirectly*:
 
 $$
 \text{immune fraction} > \boxed{1 - \frac{1}{R_0}}
 $$
 
 Example: $R_0 = 2.5$ needs 60% immune.
-:::
-::: {.column width="55%"}
-```{r}
-#| label: herd-protection
-#| fig-width: 6.5
-#| fig-height: 5.2
-risk <- function(p, R0) {
-  if (R0 * (1 - p) <= 1) return(0)
-  uniroot(function(z) 1 - z - exp(-R0 * (1 - p) * z), c(1e-9, 1))$root
-}
-ps <- seq(0, 0.95, by = 0.005)
-hd <- do.call(rbind, lapply(c(1.5, 2.5, 5), function(R0)
-  data.frame(p = ps, risk = sapply(ps, risk, R0 = R0), R0 = factor(R0))))
-ggplot(hd, aes(p, risk, colour = R0)) +
-  geom_vline(xintercept = 1 - 1 / c(1.5, 2.5, 5), linetype = "dotted",
-             colour = c("#56B4E9", "#E69F00", "#D55E00")) +
-  geom_line(linewidth = 1.5) +
-  annotate("text", x = 0.91, y = 0.42, label = "no large\nepidemic,\nbut small\noutbreaks\nstill happen",
-           size = 5, colour = "grey30", lineheight = 0.9) +
-  scale_colour_manual(values = c("#56B4E9", "#E69F00", "#D55E00")) +
-  scale_x_continuous(labels = scales::percent, limits = c(0, 1)) +
-  scale_y_continuous(labels = scales::percent) +
-  labs(x = "Fraction already immune", y = "Risk for an unprotected person\n(in a large epidemic)",
-       colour = expression(R[0])) +
-  theme(legend.position = "top")
-```
-
-Risk that a **non-immune** person is infected *in a large epidemic*, $1 - z = e^{-R_0(1-p)z}$. Above the threshold (dotted) large epidemics stop, but each introduced case still infects on average $R_t/(1-R_t)$ others (4 at $R_t = 0.8$).
-:::
-::::
 
 ## What herd immunity does *not* mean {.smaller}
 
-- **It is a threshold for growth, not a force field.** The risk on the previous slide only counts *large* epidemics. Above the threshold an introduced case still infects $R_t/(1-R_t)$ people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and $R_0 = 2.5$, an unprotected person's risk falls from 89% to 37%.
+- **It is a threshold for growth, not a force field.** Above the threshold an introduced case still infects $R_t/(1-R_t)$ people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and $R_0 = 2.5$, an unprotected person's risk falls from 89% to 37%.
 
 . . .
 

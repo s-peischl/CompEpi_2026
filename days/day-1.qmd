@@ -24,7 +24,7 @@ Projects in teams of 3–5. Three pitches before the final talk. Grading, [AI po
 - SIR with births and deaths: endemic equilibrium, damped oscillations.
 - Brief tour of extensions: SEIR, vector-borne, cholera (environmental reservoir).
 
-Slides: [Course intro + Lecture 1](../slides/L1-compartment-models.qmd) (press `F` for full screen, `S` for speaker notes)
+Slides: [Course intro + Lecture 1](../slides/L1-compartment-models.qmd) · [PDF](../pdf/L1-compartment-models.pdf) (press `F` for full screen, `S` for speaker notes)
 
 Tutorials: [T0 — Solving differential equations](../tutorials/00-solving-odes.qmd) (used in the break during the lecture), [T1 — SIR basics](../tutorials/01-sir.qmd)
 
@@ -40,7 +40,7 @@ The first infected person in a new population and the first resistant bacterium 
   - Rescue probability $\approx 1 - \exp(-2Nus/r)$ (Orr & Unckless 2014).
 - **The unifying rule:** $P(\text{establish}) \approx 2 \times (\text{mean} - 1) / \text{variance}$ of the offspring number.
 
-Slides: [Lecture 2](../slides/L2-chance.qmd) (press `F` for full screen, `S` for speaker notes)
+Slides: [Lecture 2](../slides/L2-chance.qmd) · [PDF](../pdf/L2-chance.pdf) (press `F` for full screen, `S` for speaker notes)
 
 Tutorial: [T2 — Chance: takeoff and rescue](../tutorials/02-chance.qmd)
 

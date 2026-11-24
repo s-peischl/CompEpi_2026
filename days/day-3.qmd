@@ -23,7 +23,7 @@ subtitle: "{{< var day3 >}} · 09:00–12:00"
 - Bayesian estimation of $R_t$ (Cori et al. 2013) and its assumptions: serial interval, window length, reporting.
 - Other data sources: deaths and hospitalisations, sequences (phylodynamics, birth–death skyline).
 
-Slides: [Lecture 4](../slides/L4-space-data.qmd) (press `F` for full screen, `S` for speaker notes)
+Slides: [Lecture 4](../slides/L4-space-data.qmd) · [PDF](../pdf/L4-space-data.pdf) (press `F` for full screen, `S` for speaker notes)
 
 Tutorials: [T5 — Spatial epidemics](../tutorials/05-spatial.qmd), [T6 — Estimating $R_t$](../tutorials/06-rt-estimation.qmd)
 

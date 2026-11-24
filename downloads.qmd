@@ -1,0 +1,38 @@
+---
+title: "Downloads (PDF)"
+toc: false
+---
+
+Everything on this site as PDF, for reading offline or printing. The web version is always the most recent. If they differ, the web version counts.
+
+## Course information
+
+- [Course overview](pdf/course-overview.pdf)
+- [Schedule](pdf/schedule.pdf)
+- [Projects: menu, pitches and grading](pdf/projects.pdf)
+- [AI policy](pdf/ai-policy.pdf)
+
+## Slides
+
+| Lecture | Day | |
+|---|---|---|
+| Course intro + L1 — Compartment models | {{< var day1 >}} | [PDF](pdf/L1-compartment-models.pdf) |
+| L2 — When chance decides | {{< var day1 >}} | [PDF](pdf/L2-chance.pdf) |
+| L3 — Pathogen evolution, between and within hosts | {{< var day2 >}} | [PDF](pdf/L3-pathogen-evolution.pdf) |
+| L4 — Space, individuals and data | {{< var day3 >}} | [PDF](pdf/L4-space-data.pdf) |
+
+## Day handouts
+
+- [Day 1](pdf/day-1.pdf) · [Day 2](pdf/day-2.pdf) · [Day 3](pdf/day-3.pdf) · [Day 4](pdf/day-4.pdf)
+
+## Tutorials
+
+The PDFs show the code and figures, with the answers folded away. To run the code, copy it from the web version.
+
+- [T0 — Solving differential equations in R](pdf/T0-solving-odes.pdf)
+- [T1 — SIR basics](pdf/T1-sir.pdf)
+- [T2 — Chance: takeoff and rescue](pdf/T2-chance.pdf)
+- [T3 — Strain invasion](pdf/T3-strain-invasion.pdf)
+- [T4 — Within-host dynamics](pdf/T4-within-host.pdf)
+- [T5 — Spatial models](pdf/T5-spatial.pdf)
+- [T6 — Estimating $R_t$](pdf/T6-rt-estimation.pdf)

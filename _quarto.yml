@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - pdf/
 
 website:
   title: "Computational Epidemiology 2026"
@@ -29,6 +31,8 @@ website:
         text: Projects
       - href: ai-policy.qmd
         text: AI policy
+      - href: downloads.qmd
+        text: PDFs
 
 format:
   html:

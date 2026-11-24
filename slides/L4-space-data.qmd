@@ -7,6 +7,8 @@ format:
     css: slides.css
     theme: simple
     slide-number: true
+    footer: "[⌂ Course home](../index.html) · [PDF of these slides](../pdf/L4-space-data.pdf)"
+    pdf-separate-fragments: false
     transition: none
     width: 1280
     height: 720

@@ -26,7 +26,7 @@ subtitle: "{{< var day2 >}} · 09:00–12:00"
 - A resistant mutant pays a fitness cost but tolerates the drug better. Three simple dose thresholds follow: where resistance becomes favoured ($D_x$), where the wild type alone is stopped ($D_W$), and where everything is stopped ($D_M$). Between $D_W$ and $D_M$ lies the classical **mutant selection window**.
 - Link to Day 1: whether resistance actually appears is a rescue problem. Deterministic models get this wrong.
 
-Slides: [Lecture 3](../slides/L3-pathogen-evolution.qmd) (press `F` for full screen, `S` for speaker notes)
+Slides: [Lecture 3](../slides/L3-pathogen-evolution.qmd) · [PDF](../pdf/L3-pathogen-evolution.pdf) (press `F` for full screen, `S` for speaker notes)
 
 Tutorials: [T3 — Strain invasion](../tutorials/03-strain-invasion.qmd), [T4 — Within-host dynamics](../tutorials/04-within-host.qmd)
 
