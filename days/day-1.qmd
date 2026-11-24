@@ -46,7 +46,7 @@ Tutorial: [T2 — Chance: takeoff and rescue](../tutorials/02-chance.qmd)
 
 ## 11:30 · Project menu and teams
 
-Look at the [project menu](../projects/index.qmd#menu). Form teams of 3–5. Over lunch, agree on *one* question.
+Look at the [project menu](../projects/index.qmd#menu). Form teams of 3–5 and agree on *one* question before lunch.
 
 ## 13:00 · Pitch 1 — The question {.block-pitch}
 

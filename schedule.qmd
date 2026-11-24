@@ -17,7 +17,7 @@ Colours: [lecture]{.block-lecture} · [pitch]{.block-pitch} · [work]{.block-wor
 | 10:15–10:30 | Break | |
 | 10:30–11:30 | [**Lecture 2** — When chance decides]{.block-lecture} | branching processes: epidemic takeoff *and* evolution of resistance |
 | 11:30–12:00 | Project menu, form teams (3–5) | |
-| 12:00–13:00 | Lunch | talk about ideas |
+| 12:00–13:00 | Lunch | |
 | 13:00–13:30 | [**Pitch 1 — The question**]{.block-pitch} | 2 min per team |
 | 13:30–15:00 | [**Work block 1**]{.block-work} | T0, T1 and T2 as warm-up, then your project |
 

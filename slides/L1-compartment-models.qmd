@@ -441,7 +441,7 @@ This matches the simulation (0.1534 for both).
 
 An infected person meets others at random, and only a fraction $S$ of contacts can be infected: $R_t = R_0\, S$.
 
-Once enough people are immune that $R_t < 1$, every chain **dies out on its own**, and non-immune people are protected *indirectly*:
+Once enough people are immune that $R_t < 1$, chains still start but **die out after a few infections**. A *large* epidemic is no longer possible, and non-immune people are protected *indirectly*:
 
 $$
 \text{immune fraction} > \boxed{1 - \frac{1}{R_0}}
@@ -465,21 +465,23 @@ ggplot(hd, aes(p, risk, colour = R0)) +
   geom_vline(xintercept = 1 - 1 / c(1.5, 2.5, 5), linetype = "dotted",
              colour = c("#56B4E9", "#E69F00", "#D55E00")) +
   geom_line(linewidth = 1.5) +
+  annotate("text", x = 0.91, y = 0.42, label = "no large\nepidemic,\nbut small\noutbreaks\nstill happen",
+           size = 5, colour = "grey30", lineheight = 0.9) +
   scale_colour_manual(values = c("#56B4E9", "#E69F00", "#D55E00")) +
-  scale_x_continuous(labels = scales::percent) +
+  scale_x_continuous(labels = scales::percent, limits = c(0, 1)) +
   scale_y_continuous(labels = scales::percent) +
-  labs(x = "Fraction already immune", y = "Risk for an unprotected person",
+  labs(x = "Fraction already immune", y = "Risk for an unprotected person\n(in a large epidemic)",
        colour = expression(R[0])) +
   theme(legend.position = "top")
 ```
 
-Risk that a **non-immune** person gets infected, $1 - z = e^{-R_0(1-p)z}$. It drops to zero at the threshold (dotted).
+Risk that a **non-immune** person is infected *in a large epidemic*, $1 - z = e^{-R_0(1-p)z}$. Above the threshold (dotted) large epidemics stop, but each introduced case still infects on average $R_t/(1-R_t)$ others (4 at $R_t = 0.8$).
 :::
 ::::
 
 ## What herd immunity does *not* mean {.smaller}
 
-- **It is a threshold for growth, not a force field.** Above it, an introduced case still infects some people. Chains just shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and $R_0 = 2.5$, an unprotected person's risk falls from 89% to 37%.
+- **It is a threshold for growth, not a force field.** The risk on the previous slide only counts *large* epidemics. Above the threshold an introduced case still infects $R_t/(1-R_t)$ people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and $R_0 = 2.5$, an unprotected person's risk falls from 89% to 37%.
 
 . . .
 
