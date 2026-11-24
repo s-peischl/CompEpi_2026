@@ -2,3 +2,10 @@
 .block-lecture { border-left: 4px solid #2C3E50; padding-left: .6rem; }
 .block-pitch   { border-left: 4px solid #E69F00; padding-left: .6rem; }
 .block-work    { border-left: 4px solid #18BC9C; padding-left: .6rem; }
+
+/* Clean handouts when a page is printed or saved as PDF */
+@media print {
+  #quarto-header, #quarto-code-tools-source, .code-copy-button,
+  .nav-footer, #quarto-margin-sidebar, #quarto-sidebar, .quarto-alternate-formats { display: none !important; }
+  #quarto-content { padding-top: 0 !important; }
+}

@@ -193,14 +193,14 @@
     "href": "days/day-1.html#lecture-1-compartment-models",
     "title": "Day 1 — Two ways to model an outbreak",
     "section": "09:15 · Lecture 1 — Compartment models",
-    "text": "09:15 · Lecture 1 — Compartment models\n\nWhat epidemiological models are for: understanding vs. prediction; “all models are wrong”.\nSIR as ordinary differential equations: mass action, rates, mean infectious period \\(1/\\gamma\\).\nSolving ODEs numerically; equilibria; the phase plane (\\(S\\)–\\(I\\)).\n\\(R_0 = \\beta/\\gamma\\). Infections rise as long as \\(S &gt; 1/R_0\\), which gives the herd immunity threshold \\(1 - 1/R_0\\).\nSIR with births and deaths: endemic equilibrium, damped oscillations.\nBrief tour of extensions: SEIR, vector-borne, cholera (environmental reservoir).\n\nSlides: Course intro + Lecture 1 (press F for full screen, S for speaker notes)\nTutorials: T0 — Solving differential equations (used in the break during the lecture), T1 — SIR basics"
+    "text": "09:15 · Lecture 1 — Compartment models\n\nWhat epidemiological models are for: understanding vs. prediction; “all models are wrong”.\nSIR as ordinary differential equations: mass action, rates, mean infectious period \\(1/\\gamma\\).\nSolving ODEs numerically; equilibria; the phase plane (\\(S\\)–\\(I\\)).\n\\(R_0 = \\beta/\\gamma\\). Infections rise as long as \\(S &gt; 1/R_0\\), which gives the herd immunity threshold \\(1 - 1/R_0\\).\nSIR with births and deaths: endemic equilibrium, damped oscillations.\nBrief tour of extensions: SEIR, vector-borne, cholera (environmental reservoir).\n\nSlides: Course intro + Lecture 1 · PDF (press F for full screen, S for speaker notes)\nTutorials: T0 — Solving differential equations (used in the break during the lecture), T1 — SIR basics"
   },
   {
     "objectID": "days/day-1.html#lecture-2-when-chance-decides",
     "href": "days/day-1.html#lecture-2-when-chance-decides",
     "title": "Day 1 — Two ways to model an outbreak",
     "section": "10:30 · Lecture 2 — When chance decides",
-    "text": "10:30 · Lecture 2 — When chance decides\nThe first infected person in a new population and the first resistant bacterium in a treated patient are in the same situation. Both are a single lineage that grows on average but can easily be lost by chance.\n\nBranching processes: each individual leaves a random number of “offspring” (infections, daughter cells).\nHaldane (1927): the extinction probability \\(\\eta\\) solves \\(\\eta = G(\\eta)\\), where \\(G\\) is the offspring generating function.\nEpidemic takeoff: in SIR, \\(P(\\text{takeoff}) = 1 - 1/R_0\\).\nEvolution of resistance (evolutionary rescue): a population under treatment declines at rate \\(r\\), and resistant mutants arise at rate \\(u\\) and grow at rate \\(s\\).\n\nEstablishment probability of one mutant \\(\\approx 2s\\).\nRescue probability \\(\\approx 1 - \\exp(-2Nus/r)\\) (Orr & Unckless 2014).\n\nThe unifying rule: \\(P(\\text{establish}) \\approx 2 \\times (\\text{mean} - 1) / \\text{variance}\\) of the offspring number.\n\nSlides: Lecture 2 (press F for full screen, S for speaker notes)\nTutorial: T2 — Chance: takeoff and rescue"
+    "text": "10:30 · Lecture 2 — When chance decides\nThe first infected person in a new population and the first resistant bacterium in a treated patient are in the same situation. Both are a single lineage that grows on average but can easily be lost by chance.\n\nBranching processes: each individual leaves a random number of “offspring” (infections, daughter cells).\nHaldane (1927): the extinction probability \\(\\eta\\) solves \\(\\eta = G(\\eta)\\), where \\(G\\) is the offspring generating function.\nEpidemic takeoff: in SIR, \\(P(\\text{takeoff}) = 1 - 1/R_0\\).\nEvolution of resistance (evolutionary rescue): a population under treatment declines at rate \\(r\\), and resistant mutants arise at rate \\(u\\) and grow at rate \\(s\\).\n\nEstablishment probability of one mutant \\(\\approx 2s\\).\nRescue probability \\(\\approx 1 - \\exp(-2Nus/r)\\) (Orr & Unckless 2014).\n\nThe unifying rule: \\(P(\\text{establish}) \\approx 2 \\times (\\text{mean} - 1) / \\text{variance}\\) of the offspring number.\n\nSlides: Lecture 2 · PDF (press F for full screen, S for speaker notes)\nTutorial: T2 — Chance: takeoff and rescue"
   },
   {
     "objectID": "days/day-1.html#project-menu-and-teams",
@@ -242,7 +242,7 @@
     "href": "days/day-2.html#lecture-3",
     "title": "Day 2 — Pathogen evolution, between and within hosts",
     "section": "09:00 · Lecture 3",
-    "text": "09:00 · Lecture 3\nBetween hosts: which strain wins?\n\nTwo strains with complete cross-immunity, in a population with births and deaths.\nA rare mutant grows when \\(\\beta_m S^* &gt; \\gamma_m + \\mu\\). At the resident equilibrium \\(S^* = 1/R_0^{\\text{res}}\\), so the strain with the larger \\(R_0\\) wins, even if it transmits less per contact.\nVirulence trade-off: if \\(\\beta(\\alpha) \\propto \\sqrt{\\alpha}\\), then \\(R_0\\) is maximised at \\(\\alpha^* = \\gamma + \\mu\\), an intermediate virulence.\nA mutant strain arising during one epidemic must appear early, while \\(S\\) is still high (branching process again).\n\nWithin a host: virus, cells and drugs\n\nTarget-cell model (Perelson 2002): \\(T \\to I \\to V\\), with a within-host \\(R_0 = \\beta \\lambda p / (d\\,\\delta\\,c)\\).\nThe drug blocks infection with efficacy \\(\\varepsilon\\). The wild type is suppressed if \\(\\varepsilon &gt; 1 - 1/R_0\\).\nA resistant mutant pays a fitness cost but tolerates the drug better. Three simple dose thresholds follow: where resistance becomes favoured (\\(D_x\\)), where the wild type alone is stopped (\\(D_W\\)), and where everything is stopped (\\(D_M\\)). Between \\(D_W\\) and \\(D_M\\) lies the classical mutant selection window.\nLink to Day 1: whether resistance actually appears is a rescue problem. Deterministic models get this wrong.\n\nSlides: Lecture 3 (press F for full screen, S for speaker notes)\nTutorials: T3 — Strain invasion, T4 — Within-host dynamics"
+    "text": "09:00 · Lecture 3\nBetween hosts: which strain wins?\n\nTwo strains with complete cross-immunity, in a population with births and deaths.\nA rare mutant grows when \\(\\beta_m S^* &gt; \\gamma_m + \\mu\\). At the resident equilibrium \\(S^* = 1/R_0^{\\text{res}}\\), so the strain with the larger \\(R_0\\) wins, even if it transmits less per contact.\nVirulence trade-off: if \\(\\beta(\\alpha) \\propto \\sqrt{\\alpha}\\), then \\(R_0\\) is maximised at \\(\\alpha^* = \\gamma + \\mu\\), an intermediate virulence.\nA mutant strain arising during one epidemic must appear early, while \\(S\\) is still high (branching process again).\n\nWithin a host: virus, cells and drugs\n\nTarget-cell model (Perelson 2002): \\(T \\to I \\to V\\), with a within-host \\(R_0 = \\beta \\lambda p / (d\\,\\delta\\,c)\\).\nThe drug blocks infection with efficacy \\(\\varepsilon\\). The wild type is suppressed if \\(\\varepsilon &gt; 1 - 1/R_0\\).\nA resistant mutant pays a fitness cost but tolerates the drug better. Three simple dose thresholds follow: where resistance becomes favoured (\\(D_x\\)), where the wild type alone is stopped (\\(D_W\\)), and where everything is stopped (\\(D_M\\)). Between \\(D_W\\) and \\(D_M\\) lies the classical mutant selection window.\nLink to Day 1: whether resistance actually appears is a rescue problem. Deterministic models get this wrong.\n\nSlides: Lecture 3 · PDF (press F for full screen, S for speaker notes)\nTutorials: T3 — Strain invasion, T4 — Within-host dynamics"
   },
   {
     "objectID": "days/day-2.html#pitch-2-the-model",
@@ -655,14 +655,14 @@
     "href": "slides/L1-compartment-models.html#what-herd-immunity-means",
     "title": "Computational Epidemiology",
     "section": "What herd immunity means",
-    "text": "What herd immunity means\n\n\nThe idea: immune people do not just protect themselves. They also block chains of transmission to others.\nAn infected person meets others at random, and only a fraction \\(S\\) of contacts can be infected: \\(R_t = R_0\\, S\\).\nOnce enough people are immune that \\(R_t &lt; 1\\), chains still start but die out after a few infections. A large epidemic is no longer possible, and non-immune people are protected indirectly:\n\\[\n\\text{immune fraction} &gt; \\boxed{1 - \\frac{1}{R_0}}\n\\]\nExample: \\(R_0 = 2.5\\) needs 60% immune.\n\n\n\n\n\n\n\n\n\n\nRisk that a non-immune person is infected in a large epidemic, \\(1 - z = e^{-R_0(1-p)z}\\). Above the threshold (dotted) large epidemics stop, but each introduced case still infects on average \\(R_t/(1-R_t)\\) others (4 at \\(R_t = 0.8\\))."
+    "text": "What herd immunity means\nThe idea: immune people do not just protect themselves. They also block chains of transmission to others.\nAn infected person meets others at random, and only a fraction \\(S\\) of contacts can be infected: \\(R_t = R_0\\, S\\).\nOnce enough people are immune that \\(R_t &lt; 1\\), chains still start but die out after a few infections. A large epidemic is no longer possible, and non-immune people are protected indirectly:\n\\[\n\\text{immune fraction} &gt; \\boxed{1 - \\frac{1}{R_0}}\n\\]\nExample: \\(R_0 = 2.5\\) needs 60% immune."
   },
   {
     "objectID": "slides/L1-compartment-models.html#what-herd-immunity-does-not-mean",
     "href": "slides/L1-compartment-models.html#what-herd-immunity-does-not-mean",
     "title": "Computational Epidemiology",
     "section": "What herd immunity does not mean",
-    "text": "What herd immunity does not mean\n\nIt is a threshold for growth, not a force field. The risk on the previous slide only counts large epidemics. Above the threshold an introduced case still infects \\(R_t/(1-R_t)\\) people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and \\(R_0 = 2.5\\), an unprotected person’s risk falls from 89% to 37%.\n\n\n\nReaching it through infection costs more than the threshold. The epidemic overshoots (next slide): at \\(R_0 = 2\\) the threshold is 50%, but about 80% get infected.\n\n\n\n\nIt assumes random mixing. National coverage above the threshold does not protect a cluster of unvaccinated people who mostly meet each other. Measles outbreaks in under-vaccinated communities are the classic example.\n\n\n\n\nIt is not a fixed number. It moves with \\(R_0\\): new variants, seasons and behaviour change it. Immunity can wane, so the immune fraction can slip back below the threshold.\n\n\n\n\nVaccines are not perfect. With efficacy \\(E\\), the coverage needed is \\(v_c = (1 - 1/R_0)/E\\). For measles (\\(R_0 \\approx 15\\), \\(E \\approx 0.97\\)) that is about 96%. If \\(v_c &gt; 1\\), vaccination alone cannot do it."
+    "text": "What herd immunity does not mean\n\nIt is a threshold for growth, not a force field. Above the threshold an introduced case still infects \\(R_t/(1-R_t)\\) people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and \\(R_0 = 2.5\\), an unprotected person’s risk falls from 89% to 37%.\n\n\n\nReaching it through infection costs more than the threshold. The epidemic overshoots (next slide): at \\(R_0 = 2\\) the threshold is 50%, but about 80% get infected.\n\n\n\n\nIt assumes random mixing. National coverage above the threshold does not protect a cluster of unvaccinated people who mostly meet each other. Measles outbreaks in under-vaccinated communities are the classic example.\n\n\n\n\nIt is not a fixed number. It moves with \\(R_0\\): new variants, seasons and behaviour change it. Immunity can wane, so the immune fraction can slip back below the threshold.\n\n\n\n\nVaccines are not perfect. With efficacy \\(E\\), the coverage needed is \\(v_c = (1 - 1/R_0)/E\\). For measles (\\(R_0 \\approx 15\\), \\(E \\approx 0.97\\)) that is about 96%. If \\(v_c &gt; 1\\), vaccination alone cannot do it."
   },
   {
     "objectID": "slides/L1-compartment-models.html#herd-immunity-threshold-and-final-size",
@@ -901,6 +901,41 @@
     "title": "Projects",
     "section": "How projects are assessed",
     "text": "How projects are assessed\n\n\n\n\n\n\n\nCriterion\nWhat I look for\n\n\n\n\nQuestion\nClear, focused, answerable with the model\n\n\nModel\nAppropriate, with assumptions stated and justified, and a reference case\n\n\nAnalysis\nCorrect, sanity-checked, robust (replicates, parameter scan)\n\n\nInterpretation\nLinks back to biology or public health, and names the limits of the model\n\n\nCommunication\nClear figures, one message per figure, on time\n\n\nReproducibility\nCode runs and reproduces the figures"
+  },
+  {
+    "objectID": "downloads.html",
+    "href": "downloads.html",
+    "title": "Downloads (PDF)",
+    "section": "",
+    "text": "Everything on this site as PDF, for reading offline or printing. The web version is always the most recent. If they differ, the web version counts."
+  },
+  {
+    "objectID": "downloads.html#course-information",
+    "href": "downloads.html#course-information",
+    "title": "Downloads (PDF)",
+    "section": "Course information",
+    "text": "Course information\n\nCourse overview\nSchedule\nProjects: menu, pitches and grading\nAI policy"
+  },
+  {
+    "objectID": "downloads.html#slides",
+    "href": "downloads.html#slides",
+    "title": "Downloads (PDF)",
+    "section": "Slides",
+    "text": "Slides\n\n\n\nLecture\nDay\n\n\n\n\n\nCourse intro + L1 — Compartment models\nWednesday 25 November 2026\nPDF\n\n\nL2 — When chance decides\nWednesday 25 November 2026\nPDF\n\n\nL3 — Pathogen evolution, between and within hosts\nWednesday 2 December 2026\nPDF\n\n\nL4 — Space, individuals and data\nWednesday 9 December 2026\nPDF"
+  },
+  {
+    "objectID": "downloads.html#day-handouts",
+    "href": "downloads.html#day-handouts",
+    "title": "Downloads (PDF)",
+    "section": "Day handouts",
+    "text": "Day handouts\n\nDay 1 · Day 2 · Day 3 · Day 4"
+  },
+  {
+    "objectID": "downloads.html#tutorials",
+    "href": "downloads.html#tutorials",
+    "title": "Downloads (PDF)",
+    "section": "Tutorials",
+    "text": "Tutorials\nThe PDFs show the code and figures, with the answers folded away. To run the code, copy it from the web version.\n\nT0 — Solving differential equations in R\nT1 — SIR basics\nT2 — Chance: takeoff and rescue\nT3 — Strain invasion\nT4 — Within-host dynamics\nT5 — Spatial models\nT6 — Estimating \\(R_t\\)"
   },
   {
     "objectID": "index.html",
@@ -1495,7 +1530,7 @@
     "href": "days/day-3.html#lecture-4",
     "title": "Day 3 — Space, individuals and data",
     "section": "09:00 · Lecture 4",
-    "text": "09:00 · Lecture 4\nSpace and individuals\n\nFrom compartments to individuals: Gillespie simulation, and cellular automata on a grid.\nLocal transmission: infections can only happen at the edge of the epidemic. Cumulative cases grow like \\(t^2\\) (in 2D), not \\(e^{rt}\\).\nSpatial structure within hosts: tumours, biofilms, drug gradients and evolutionary rescue in structured populations (Tomasini & Peischl).\n\nModels meet data\n\nThe renewal equation: incidence today = \\(R_t \\times\\) (past incidence weighted by the serial interval).\nBayesian estimation of \\(R_t\\) (Cori et al. 2013) and its assumptions: serial interval, window length, reporting.\nOther data sources: deaths and hospitalisations, sequences (phylodynamics, birth–death skyline).\n\nSlides: Lecture 4 (press F for full screen, S for speaker notes)\nTutorials: T5 — Spatial epidemics, T6 — Estimating \\(R_t\\)"
+    "text": "09:00 · Lecture 4\nSpace and individuals\n\nFrom compartments to individuals: Gillespie simulation, and cellular automata on a grid.\nLocal transmission: infections can only happen at the edge of the epidemic. Cumulative cases grow like \\(t^2\\) (in 2D), not \\(e^{rt}\\).\nSpatial structure within hosts: tumours, biofilms, drug gradients and evolutionary rescue in structured populations (Tomasini & Peischl).\n\nModels meet data\n\nThe renewal equation: incidence today = \\(R_t \\times\\) (past incidence weighted by the serial interval).\nBayesian estimation of \\(R_t\\) (Cori et al. 2013) and its assumptions: serial interval, window length, reporting.\nOther data sources: deaths and hospitalisations, sequences (phylodynamics, birth–death skyline).\n\nSlides: Lecture 4 · PDF (press F for full screen, S for speaker notes)\nTutorials: T5 — Spatial epidemics, T6 — Estimating \\(R_t\\)"
   },
   {
     "objectID": "days/day-3.html#pitch-3-first-result",
