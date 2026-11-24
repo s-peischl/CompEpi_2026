@@ -11,7 +11,7 @@
     "href": "schedule.html#full-day",
     "title": "Schedule",
     "section": "Wednesday 25 November 2026 — full day",
-    "text": "Wednesday 25 November 2026 — full day\n\n\n\n\n\n\n\n\nTime\nBlock\n\n\n\n\n\n09:00–09:15\nHow this course works\nprojects, pitches, grading, AI policy\n\n\n09:15–10:15\nLecture 1 — Compartment models\nSIR, \\(R_0\\), herd immunity, equilibria, phase plane\n\n\n10:15–10:30\nBreak\n\n\n\n10:30–11:30\nLecture 2 — When chance decides\nbranching processes: epidemic takeoff and evolution of resistance\n\n\n11:30–12:00\nProject menu, form teams (3–5)\n\n\n\n12:00–13:00\nLunch\ntalk about ideas\n\n\n13:00–13:30\nPitch 1 — The question\n2 min per team\n\n\n13:30–15:00\nWork block 1\nT0, T1 and T2 as warm-up, then your project"
+    "text": "Wednesday 25 November 2026 — full day\n\n\n\n\n\n\n\n\nTime\nBlock\n\n\n\n\n\n09:00–09:15\nHow this course works\nprojects, pitches, grading, AI policy\n\n\n09:15–10:15\nLecture 1 — Compartment models\nSIR, \\(R_0\\), herd immunity, equilibria, phase plane\n\n\n10:15–10:30\nBreak\n\n\n\n10:30–11:30\nLecture 2 — When chance decides\nbranching processes: epidemic takeoff and evolution of resistance\n\n\n11:30–12:00\nProject menu, form teams (3–5)\n\n\n\n12:00–13:00\nLunch\n\n\n\n13:00–13:30\nPitch 1 — The question\n2 min per team\n\n\n13:30–15:00\nWork block 1\nT0, T1 and T2 as warm-up, then your project"
   },
   {
     "objectID": "schedule.html#morning",
@@ -207,7 +207,7 @@
     "href": "days/day-1.html#project-menu-and-teams",
     "title": "Day 1 — Two ways to model an outbreak",
     "section": "11:30 · Project menu and teams",
-    "text": "11:30 · Project menu and teams\nLook at the project menu. Form teams of 3–5. Over lunch, agree on one question."
+    "text": "11:30 · Project menu and teams\nLook at the project menu. Form teams of 3–5 and agree on one question before lunch."
   },
   {
     "objectID": "days/day-1.html#pitch-1-the-question",
@@ -655,14 +655,14 @@
     "href": "slides/L1-compartment-models.html#what-herd-immunity-means",
     "title": "Computational Epidemiology",
     "section": "What herd immunity means",
-    "text": "What herd immunity means\n\n\nThe idea: immune people do not just protect themselves. They also block chains of transmission to others.\nAn infected person meets others at random, and only a fraction \\(S\\) of contacts can be infected: \\(R_t = R_0\\, S\\).\nOnce enough people are immune that \\(R_t &lt; 1\\), every chain dies out on its own, and non-immune people are protected indirectly:\n\\[\n\\text{immune fraction} &gt; \\boxed{1 - \\frac{1}{R_0}}\n\\]\nExample: \\(R_0 = 2.5\\) needs 60% immune.\n\n\n\n\n\n\n\n\n\n\nRisk that a non-immune person gets infected, \\(1 - z = e^{-R_0(1-p)z}\\). It drops to zero at the threshold (dotted)."
+    "text": "What herd immunity means\n\n\nThe idea: immune people do not just protect themselves. They also block chains of transmission to others.\nAn infected person meets others at random, and only a fraction \\(S\\) of contacts can be infected: \\(R_t = R_0\\, S\\).\nOnce enough people are immune that \\(R_t &lt; 1\\), chains still start but die out after a few infections. A large epidemic is no longer possible, and non-immune people are protected indirectly:\n\\[\n\\text{immune fraction} &gt; \\boxed{1 - \\frac{1}{R_0}}\n\\]\nExample: \\(R_0 = 2.5\\) needs 60% immune.\n\n\n\n\n\n\n\n\n\n\nRisk that a non-immune person is infected in a large epidemic, \\(1 - z = e^{-R_0(1-p)z}\\). Above the threshold (dotted) large epidemics stop, but each introduced case still infects on average \\(R_t/(1-R_t)\\) others (4 at \\(R_t = 0.8\\))."
   },
   {
     "objectID": "slides/L1-compartment-models.html#what-herd-immunity-does-not-mean",
     "href": "slides/L1-compartment-models.html#what-herd-immunity-does-not-mean",
     "title": "Computational Epidemiology",
     "section": "What herd immunity does not mean",
-    "text": "What herd immunity does not mean\n\nIt is a threshold for growth, not a force field. Above it, an introduced case still infects some people. Chains just shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and \\(R_0 = 2.5\\), an unprotected person’s risk falls from 89% to 37%.\n\n\n\nReaching it through infection costs more than the threshold. The epidemic overshoots (next slide): at \\(R_0 = 2\\) the threshold is 50%, but about 80% get infected.\n\n\n\n\nIt assumes random mixing. National coverage above the threshold does not protect a cluster of unvaccinated people who mostly meet each other. Measles outbreaks in under-vaccinated communities are the classic example.\n\n\n\n\nIt is not a fixed number. It moves with \\(R_0\\): new variants, seasons and behaviour change it. Immunity can wane, so the immune fraction can slip back below the threshold.\n\n\n\n\nVaccines are not perfect. With efficacy \\(E\\), the coverage needed is \\(v_c = (1 - 1/R_0)/E\\). For measles (\\(R_0 \\approx 15\\), \\(E \\approx 0.97\\)) that is about 96%. If \\(v_c &gt; 1\\), vaccination alone cannot do it."
+    "text": "What herd immunity does not mean\n\nIt is a threshold for growth, not a force field. The risk on the previous slide only counts large epidemics. Above the threshold an introduced case still infects \\(R_t/(1-R_t)\\) people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and \\(R_0 = 2.5\\), an unprotected person’s risk falls from 89% to 37%.\n\n\n\nReaching it through infection costs more than the threshold. The epidemic overshoots (next slide): at \\(R_0 = 2\\) the threshold is 50%, but about 80% get infected.\n\n\n\n\nIt assumes random mixing. National coverage above the threshold does not protect a cluster of unvaccinated people who mostly meet each other. Measles outbreaks in under-vaccinated communities are the classic example.\n\n\n\n\nIt is not a fixed number. It moves with \\(R_0\\): new variants, seasons and behaviour change it. Immunity can wane, so the immune fraction can slip back below the threshold.\n\n\n\n\nVaccines are not perfect. With efficacy \\(E\\), the coverage needed is \\(v_c = (1 - 1/R_0)/E\\). For measles (\\(R_0 \\approx 15\\), \\(E \\approx 0.97\\)) that is about 96%. If \\(v_c &gt; 1\\), vaccination alone cannot do it."
   },
   {
     "objectID": "slides/L1-compartment-models.html#herd-immunity-threshold-and-final-size",

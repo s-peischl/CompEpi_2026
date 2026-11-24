@@ -641,7 +641,7 @@ I + S - \frac{\ln S}{R_0} = \text{const} = 1 \quad (\text{at the start: } S = 1,
 <div class="column" style="width:45%;">
 <p><strong>The idea:</strong> immune people do not just protect themselves. They also <em>block chains of transmission</em> to others.</p>
 <p>An infected person meets others at random, and only a fraction <span class="math inline">\(S\)</span> of contacts can be infected: <span class="math inline">\(R_t = R_0\, S\)</span>.</p>
-<p>Once enough people are immune that <span class="math inline">\(R_t &lt; 1\)</span>, every chain <strong>dies out on its own</strong>, and non-immune people are protected <em>indirectly</em>:</p>
+<p>Once enough people are immune that <span class="math inline">\(R_t &lt; 1\)</span>, chains still start but <strong>die out after a few infections</strong>. A <em>large</em> epidemic is no longer possible, and non-immune people are protected <em>indirectly</em>:</p>
 <p><span class="math display">\[
 \text{immune fraction} &gt; \boxed{1 - \frac{1}{R_0}}
 \]</span></p>
@@ -656,13 +656,13 @@ I + S - \frac{\ln S}{R_0} = \text{const} = 1 \quad (\text{at the start: } S = 1,
 </div>
 </div>
 </div>
-<p>Risk that a <strong>non-immune</strong> person gets infected, <span class="math inline">\(1 - z = e^{-R_0(1-p)z}\)</span>. It drops to zero at the threshold (dotted).</p>
+<p>Risk that a <strong>non-immune</strong> person is infected <em>in a large epidemic</em>, <span class="math inline">\(1 - z = e^{-R_0(1-p)z}\)</span>. Above the threshold (dotted) large epidemics stop, but each introduced case still infects on average <span class="math inline">\(R_t/(1-R_t)\)</span> others (4 at <span class="math inline">\(R_t = 0.8\)</span>).</p>
 </div></div>
 </section>
 <section id="what-herd-immunity-does-not-mean" class="slide level2 smaller">
 <h2>What herd immunity does <em>not</em> mean</h2>
 <ul>
-<li><strong>It is a threshold for growth, not a force field.</strong> Above it, an introduced case still infects some people. Chains just shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and <span class="math inline">\(R_0 = 2.5\)</span>, an unprotected person’s risk falls from 89% to 37%.</li>
+<li><strong>It is a threshold for growth, not a force field.</strong> The risk on the previous slide only counts <em>large</em> epidemics. Above the threshold an introduced case still infects <span class="math inline">\(R_t/(1-R_t)\)</span> people on average, and close to the threshold these chains are long. Chains shrink instead of growing. Below it, partial immunity still helps: at 50% immunity and <span class="math inline">\(R_0 = 2.5\)</span>, an unprotected person’s risk falls from 89% to 37%.</li>
 </ul>
 <div class="fragment">
 <ul>
